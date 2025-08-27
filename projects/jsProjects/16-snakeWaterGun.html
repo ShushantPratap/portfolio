@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+        body{
+            background-color: #629fab;
+        }
+        .container{
+            width: fit-content;
+            background: #ccccff;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 5px;
+            text-transform: capitalize;
+            box-shadow: 0px 3px 10px gray;
+        }
+        h1{
+            color: #fff;
+            font-size: 25px;
+            padding: 5px;
+            border-radius: 5px;
+            background: #c7522a;
+        }
+        h2{
+            margin: 5px;
+        }
+        .result{
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #629fab;
+        }
+        .result span{
+            color: red;
+        }
+        .input{
+            width: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .input input{
+            flex-grow: 1;
+            margin: 5px;
+            padding: 5px;
+            font-size: 18px;
+            border: 3px solid #c7522a;
+            border-radius: 5px;
+            background: transparent;
+            transition: ease-in-out 0.3s;
+            cursor: pointer;
+        }
+        .input input:hover{
+            scale: 1.05;
+            color: #fff;
+            background-color: #c7522a;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <form class="container">
+        <h1>play sanke, water, gun game</h1>
+        <h2>choose one value.</h2>
+        <div class="input">
+            <input type="submit" value="Snake">
+            <input type="submit" value="Water">
+            <input type="submit" value="Gun">
+        </div>
+        <div class="result">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+        </div>
+    </form>
+
+<script>
+
+let input = document.getElementsByTagName("input");
+let user = Array.from(input);
+let array = ["snake", "water", "gun"];
+let result = document.querySelectorAll(".result h2");
+
+user.forEach(element => { 
+    element.onclick = (e)=>{
+        e.preventDefault();
+        let computer = array[Math.floor(Math.random()*3)];
+        result[1].innerHTML="your value : " + element.value;
+        result[2].innerHTML="computer value : " + computer;
+        if(element.value=="Snake"){
+            if(computer=="snake"){
+                result[0].innerHTML="the game is tie.";
+            }else if(computer=="water"){
+                result[0].innerHTML="you're win computer is lose.";
+            }else if(computer=="gun"){
+                result[0].innerHTML="<span>you're lose computer is win.</span>";
+            }else{alert("Error");}
+        }
+        else if(element.value=="Water"){
+            if(computer=="snake"){
+                result[0].innerHTML="<span>you're lose computer is win.</span>";
+            }else if(computer=="water"){
+                result[0].innerHTML="the game is tie.";
+            }else if(computer=="gun"){
+                result[0].innerHTML="you're win computer is lose.";
+            }else{alert("Error");} 
+        }
+        else{
+            if(computer=="snake"){
+                result[0].innerHTML="you're win computer is lose.";
+            }else if(computer=="water"){
+                result[0].innerHTML="<span>you're lose computer is win.</span>";
+            }else if(computer=="gun"){
+                result[0].innerHTML="the game is tie.";
+            }else{alert("Error");} 
+        }
+    }
+});
+
+</script>
+    
+</body>
+</html>

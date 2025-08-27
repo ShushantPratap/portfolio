@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skill Section With Dynamic Background</title>
+    <script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body{
+   background: white;
+
+background-attachment: fixed;
+}
+h1{
+    font-size: 35px;
+    margin-left: 3%;
+}
+
+.header{
+    width: auto;
+    height: 60vh;
+    background-color:#1c1c1c;
+    
+}
+.header h1{
+    color: white;
+    font-size: 100px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    margin: 0;
+}
+
+/** dark mode **/
+#dark-mode{
+    padding: 15px;
+    border-radius: 30px;
+    background: #fff;
+    width: 80px;
+    cursor: pointer;
+    border: 2px solid gray;
+    position: relative;
+    top: 80%;
+    left: 90%;
+}
+.btn{
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 100%;
+    position: absolute;
+    top: -6px;
+    left: -5px;
+    transition: all 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gray;
+}
+.btn:before{
+    content: "\f186";
+    font-family: fontAwesome;
+    font-size: 30px;
+    color: #000;
+}
+.dark{
+    position: absolute;
+    left: 40px;
+    background: #29292b;
+    border: 1px solid #fff;
+}
+
+body.background-dark{
+    background: #181818;
+    color: #fafafa;
+}
+
+
+/*** Skill section ***/
+.skill{
+    opacity: 0.9;
+    width: 94%;
+    height: 75vh;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+    margin: 30px auto;
+    padding: 2%;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 1px 0 5px #141414, -1px 0 5px #606060, 1px 0 5px white;
+    overflow: hidden;
+
+}
+
+.skill img{
+    opacity: 5;
+    width: 80px;
+    border-radius: 50%;
+    border: 5px solid black;
+    position: absolute;
+    margin: 1%; 
+}
+.skill h1{
+    font-size: 25px;
+    position: relative;
+    left: 100px;
+    top: 60px;
+}
+.skill .tech{
+    float: left;
+    width: 55%;
+    text-align: center;
+}
+.tech p{
+    margin-top: 20px;
+}
+.progress{
+    width: 100%;
+    height: 4vh;
+    background-color: gray;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.progress .pro-bar{
+    width: 10%;
+    opacity: 1;
+    height: 100%;
+    background-color: #c60000;
+    border-radius: 10px;
+    position: relative;
+    transition: all .5s;
+}
+.pro-bar span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+}
+
+.skill .pro{
+    float: right;
+    width: 45%;
+    height: 110%;
+    position: relative;
+    top: -30%;
+    padding: 2% 1% 0 4%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.skill .pro h2{
+    opacity: 1;
+}
+.skill .pro .circle{
+    position: relative;
+    height: 37%;
+    width: 37%;
+    margin: 3% 2% 4% 2%;
+    border: 3px solid black;
+    border-radius: 50%;
+    background: conic-gradient(#c60000 3.6deg, #ededed 0deg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.skill .pro .circle::before{
+    content: "";
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.skill .pro .value{
+    position: relative;
+    left: 35%;
+    font-size: 150%;
+    font-weight: 600;
+    color: black;
+}
+.skill .pro h3{
+    font-size: 90%;
+    font-weight: 700;
+    color: #000000;
+    z-index: 1;
+    position: relative;
+    top: 60%;
+    right: 12%;
+}
+
+
+/*** dynamic background ***/
+.bg{
+    width: 50%;
+    height: 60px;
+    float: right;
+    position: relative;
+    top: 60%;
+}
+.bg #red,#green,#tomato,#sky,#e{
+    float: right;
+    width: 10%;
+    height: 10vh;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.bg #red{
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+ 
+}
+.bg #green{
+    background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);
+}
+.bg #tomato{
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;
+}
+.bg #sky{
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+.bg #e{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+
+.red{
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+ 
+    color: #180000;
+}
+
+.green{
+    background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);
+    color: #0c0c0c;
+}
+
+.tomato{
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;
+    color: #000000;
+}
+
+.sky{
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    color: #fff83b;
+}
+
+.e{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #14170c;
+}
+</style>
+
+</head>
+<body>
+    
+<div class="header">
+<h1>Skill section</h1>
+    <img src="" alt="">
+    <div class="bg">
+       <div id="red"></div>
+       <div id="green"></div>
+       <div id="tomato"></div>
+       <div id="sky"></div>
+       <div id="e"></div>
+    </div>
+
+    <div id="dark-mode">
+        <span class="btn"></span>
+    </div>
+
+</div>
+
+<h1>skill section with dynamic background</h1>
+
+<div class="skill">
+    <img src="https://placehold.co/150x150/ffffff/d3d3d3?text=SP">
+    <h1>Mr. Doraemon</h1>
+    <br><br><br><br>
+
+    <div class="tech">
+        <h2>technical skills</h2>
+
+        <p>HTML</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="96">
+                <span>96%</span>
+            </div>
+        </div>
+
+    <p>CSS</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="85">
+                <span>85%</span>
+            </div>
+        </div>
+
+    <p>Java Script</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="50">
+                <span>50%</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="pro">
+        <h2>professional skills</h2>
+        <div class="circle" data-progress="70"><h4 class="value" data-progress="70">0%</h4>
+            <h3>team work(group)</h3></div>
+
+        <div class="circle" data-progress="90"><h4 class="value" data-progress="90">0%</h4>
+            <h3>project management</h3></div>
+    <br>   
+        <div class="circle" data-progress="65"><h4 class="value" data-progress="65">0%</h4>
+            <h3>crativity and work</h3></div>
+        
+        <div class="circle" data-progress="80"><h4 class="value" data-progress="80">0%</h4>
+            <h3>expirience & work</h3></div>
+    </div>
+</div>
+
+
+<div class="skill">
+    <img src="https://placehold.co/150x150/ffffff/d3d3d3?text=SP">
+    <h1>Mr. shinchan</h1>
+    <br><br><br><br>
+
+    <div class="tech">
+        <h2>technical skills</h2>
+        
+        <p>HTML</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="90">
+                <span>90%</span>
+            </div>
+        </div>
+
+    <p>CSS</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="94">
+                <span>94%</span>
+            </div>
+        </div>
+
+    <p>Java Script</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="65">
+                <span>65%</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="pro">
+        <h2>professional skills</h2>
+        <div class="circle" data-progress="89"><h4 class="value" data-progress="89">0%</h4>
+            <h3>team work(group)</h3></div>
+
+        <div class="circle" data-progress="70"><h4 class="value" data-progress="70">0%</h4>
+            <h3>project management</h3></div>
+    <br>   
+        <div class="circle" data-progress="60"><h4 class="value" data-progress="60">0%</h4>
+            <h3>crativity and work</h3></div>
+        
+        <div class="circle" data-progress="50"><h4 class="value" data-progress="50">0%</h4>
+            <h3>expirience & work</h3></div>
+    </div>
+</div>
+
+
+<div class="skill">
+    <img src="https://placehold.co/150x150/ffffff/d3d3d3?text=SP">
+    <h1>Mr. nobita</h1>
+    <br><br><br><br>
+
+    <div class="tech">
+        <h2>technical skills</h2>
+    
+        <p>HTML</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="80">
+                <span>80%</span>
+            </div>
+        </div>
+
+    <p>CSS</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="50">
+                <span>50%</span>
+            </div>
+        </div>
+
+    <p>Java Script</p>
+        <div class="progress">
+            <div class="pro-bar" data-progress="90">
+                <span>90%</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="pro">
+        <h2>professional skills</h2>
+        <div class="circle" data-progress="75"><h4 class="value" data-progress="75">0%</h4>
+            <h3>team work(group)</h3></div>
+
+        <div class="circle" data-progress="90"><h4 class="value" data-progress="90">0%</h4>
+            <h3>project management</h3></div>
+    <br>   
+        <div class="circle" data-progress="50"><h4 class="value" data-progress="50">0%</h4>
+            <h3>crativity and work</h3></div>
+        
+        <div class="circle" data-progress="70"><h4 class="value" data-progress="70">0%</h4>
+            <h3>expirience & work</h3></div>
+    </div>
+</div>
+
+
+<script>
+/*
+let proStart = 0,
+    proEnd = 50,
+    speed = 10;
+
+let progress = setInterval(() => {
+    proStart++;
+
+    progressValue.textContent = proStart+"%";
+    circle.style.background = `conic-gradient(#7d2ae8 ${proStart * 3.6}deg, #ededed 0deg)`
+
+    if(proStart == proEnd){
+        clearInterval(progress);
+    }
+},speed);*/
+
+// Progress progressCircle ***
+let skill = document.querySelector(".skill");
+let proBar= document.querySelectorAll(".pro-bar");
+let circle = document.querySelectorAll(".circle");
+let progressValue = document.querySelectorAll(".value");
+
+
+function showProgress(){
+// progress bar **
+proBar.forEach(progressBar => {
+        let value = progressBar.dataset.progress;
+
+        progressBar.style.opacity = 1;
+        progressBar.style.width = value+"%" ;// `${value}%`;
+    });
+// bar end
+
+// progress circle **
+circle.forEach(progressCircle => {
+        let value = progressCircle.dataset.progress;
+
+let proStart = 0,
+    proEnd = value,
+    speed = 10;
+
+let progress = setInterval(() => {
+    proStart++;
+
+    progressCircle.style.background = `conic-gradient(#c60000  ${proStart * 3.6}deg, #ededed 0deg)`;
+    if(proStart == proEnd){
+        clearInterval(progress);
+    }
+},speed);
+});
+
+// progress value**
+progressValue.forEach(progressVal => {
+    let value = progressVal.dataset.progress;
+
+let proStart = 0,
+    proEnd = value,
+    speed = 10;
+
+let progress = setInterval(() => {
+    proStart++;
+    
+    progressVal.textContent = proStart+"%";
+    if(proStart == proEnd){
+        clearInterval(progress);
+    }
+},speed);
+
+});
+// value end **
+}
+
+
+function hideProgress(){
+    proBar.forEach(p =>{
+        p.style.opacity = 0;
+        p.style.width = 0;
+});
+
+// progress circle **
+circle.forEach(a => {
+    a.style.background = "conic-gradient(orangered 3.6deg, #ededed 0deg)";
+});
+
+// progress value**
+progressValue.forEach(b => {
+    b.textContent = "0%";
+});
+
+}
+
+
+window.addEventListener("scroll",() => {
+    
+    let sectionPos = skill.getBoundingClientRect().top;
+        let screenPos = window.innerHeight / 2;
+
+        if(sectionPos < screenPos){
+            showProgress();
+        }
+        else{hideProgress();}
+    
+});
+// Progress progressCircle End
+// dark mode**
+let btn = document.getElementById("dark-mode");
+let btn1 = document.querySelector(".btn")
+btn.onclick = () =>{
+    btn1.classList.toggle("dark");
+    document.body.classList.toggle("background-dark");
+}
+
+
+let red = document.getElementById("red");
+let green = document.getElementById("green");
+let tomato = document.getElementById("tomato");
+let sky = document.getElementById("sky");
+let e =document.getElementById("e");
+
+red.onclick=function(){
+  let x = document.body.classList;
+  x.toggle("red");
+  x.remove('green','tomato','sky','e');
+}
+
+green.onclick=function(){
+  let x = document.body.classList;
+  x.toggle("green");
+  x.remove('red','tomato','sky','e');
+}
+
+tomato.onclick=function(){
+  let x = document.body.classList;
+  x.toggle("tomato");
+  x.remove('green','red','sky','e');
+}
+
+sky.onclick=function(){
+  let x = document.body.classList;
+  x.toggle("sky");
+  x.remove('green','tomato','red','e');
+}
+
+e.onclick=function(){
+  let x = document.body.classList;
+  x.toggle("e");
+  x.remove('green','tomato','red','sky');
+}
+
+</script>
+
+</body>
+</html>

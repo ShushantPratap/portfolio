@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+	<nav class="nav-bar">
+		<button id="openMenu">
+			<i class="fa-solid fa-bars-staggered"></i>
+		</button>
+		<div class="menu">
+			<a href="#" class="close-menu">
+				<i class="fa-regular fa-circle-xmark"></i>
+			</a>
+			<a href="index.html">HOME</a>
+			<a id="account">your Account</a>
+			<a href="collections.php?collection=order">track order</a>
+			<a href="collections.php?collection=new">new arrivals</a>
+			<a href="collections.php?collection=best">best selling</a>
+			<a href="collections.php?collection=customer">customer support</a>
+			<a href="collections.php?collection=store">visit store</a>
+			<a href="collections.php?collection=about">About us</a>
+			<div class="social">
+				<a href="#"><i class="fa-brands fa-instagram"></i></a>
+				<a href="#"><i class="fa-brands fa-facebook"></i></a>
+				<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+				<a href="#"><i class="fa-solid fa-phone"></i></a>
+			</div>
+			<div class="welcome">
+				<h2>Hi</h2>
+				<button>
+					<a>Log in</a>
+				</button>
+			</div>
+		</div>
+		<div class="logo"><img src="logo.jpeg"></div>
+		<div class="search">
+			<input type="text" placeholder="Search" onkeyup="productSearch()" id="searchInput">
+			<button>
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</button>
+		</div>
+		<div class="cart-btn">
+			<a href="#" id="searchBarOpen">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</a>
+			<a href="cart.html" data-n="1">
+				<img src="icon/shopping-bag.png" alt="cart">
+				<span></span>
+			</a>
+		</div>
+	</nav>
+	<div class="searchResult">
+		<ul></ul>
+	</div>
+
+	<div id="container">
+		<!-- Slide container -->
+		<div id="slider-container">
+			<div id="slides"></div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<!-- The dots/circles -->
+		<div class="dots" style="text-align:center;"></div>
+
+		<div class="heading">
+			<h2>Browse by Category</h2>
+		</div>
+		<div class="categories">
+			<div class="category" onclick="category('shirts')">
+				<div class="image">
+					<img src="https://placehold.co/420x420/421156/FFFFFF?text=Shirts">
+				</div>
+				<div class="text">
+					<h3>shirts</h3>
+				</div>
+			</div>
+			<div class="category" onclick="category('t-shirts')">
+				<div class="image">
+					<img src="https://placehold.co/420x420/421156/FFFFFF?text=Shirts">
+				</div>
+				<div class="text">
+					<h3>t-shirts</h3>
+				</div>
+			</div>
+			<div class="category" onclick="category('jeans')">
+				<div class="image">
+					<img src="https://placehold.co/420x420/421156/FFFFFF?text=Shirts">
+				</div>
+				<div class="text">
+					<h3>jeans</h3>
+				</div>
+			</div>
+			<div class="category" onclick="category('pants')">
+				<div class="image">
+					<img src="https://placehold.co/420x420/421156/FFFFFF?text=Shirts">
+				</div>
+				<div class="text">
+					<h3>pants</h3>
+				</div>
+			</div>
+			<div class="category" onclick="category('shorts')">
+				<div class="image">
+					<img src="https://placehold.co/420x420/421156/FFFFFF?text=Shirts">
+				</div>
+				<div class="text">
+					<h3>shorts</h3>
+				</div>
+			</div>
+			<div class="category" onclick="category('jackets')">
+				<div class="image">
+					<img src="https://placehold.co/420x420/421156/FFFFFF?text=Shirts">
+				</div>
+				<div class="text">
+					<h3>jackets</h3>
+				</div>
+			</div>
+
+		</div>
+		<div class="arrival">
+			<div class="btn">
+				<button id="newBtn" class="activeBtn">New Arrivals</button>
+				<button id="bestBtn">Best Selling</button>
+			</div>
+			<div class="new"></div>
+			<div class="best"></div>
+			<a id="arrivalBtn" href="collections.php?collection=new">view all</a>
+		</div>
+
+		<div class="heading">
+			<h2>Browse more products</h2>
+		</div>
+		<div class="card"></div>
+
+	</div>
+
+	<script type="text/javascript" src="js/products.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript">
+		const image = [
+			{
+				name: "Jumpsuit",
+				img: function() {
+					return this
+				},
+				src: "#"
+			}
+		];
+		console.log(image[0].img())
+
+		// Slider--
+		let sliders = document.getElementById('slides');
+		let sliderDot = document.querySelector('.dots');
+		let output = '';
+		let output1 = '';
+		for (i = 0; i < slidesItem.length; i++) {
+			output += `
+      <div class="mySlides fade">
+          <img src="${slidesItem[i].img()}">
+            <div class="con">
+            <h1>${slidesItem[i].name}</h1>
+            <a href="${slidesItem[i].src}">
+              <button>Learn more</button>
+            </a>
+            </div>
+            <div class="numbertext">${i + 1 + '/' + slidesItem.length}</div>
+        </div>
+      `;
+			output1 += `
+      <span class="dot" onclick="currentSlide(${i + 1})"></span>
+    `;
+		}
+		sliders.innerHTML = output;
+		sliderDot.innerHTML = output1;
+
+		let slideIndex = 1;
+		showSlides(slideIndex);
+		// Next/previous controls
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+		// image controls
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot");
+
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+		}
+
+		// Arrivals
+		let newBtn = $("#newBtn"),
+			bestBtn = $("#bestBtn"),
+			newShow = $(".new"),
+			bestShow = $(".best"),
+			newShow1 = document.querySelector(".arrival .new"),
+			bestShow1 = document.querySelector(".arrival .best"),
+			view = document.getElementById("arrivalBtn");
+
+		for (i = 0; i < products.length; i++) {
+			let x = products[i],
+				product = productTemp(i);
+			let col6 = document.querySelectorAll(".new .col-6");
+			if (x.arrival == "new") {
+				newShow1.insertAdjacentHTML('beforeend', product);
+			}
+			if (col6.length == 4) {
+				break;
+			}
+		}
+		for (i = 0; i < products.length; i++) {
+			let x = products[i],
+				product = productTemp(i);
+			let col6 = document.querySelectorAll(".best .col-6");
+			if (x.sell == "best") {
+				bestShow1.insertAdjacentHTML('beforeend', product);
+			}
+			if (col6.length == 4) {
+				break;
+			}
+		}
+		bestShow.hide();
+		newBtn.on("click", function () {
+			newBtn.addClass("activeBtn");
+			bestBtn.removeClass("activeBtn");
+			newShow.fadeIn();
+			bestShow.fadeOut();
+			bestShow.hide();
+			view.href = "collections.php?collection=new";
+		});
+		bestBtn.on("click", function () {
+			newBtn.removeClass("activeBtn");
+			bestBtn.addClass("activeBtn");
+			newShow.fadeOut();
+			newShow.hide();
+			bestShow.fadeIn();
+			view.href = "collections.php?collection=best";
+		});
+
+	</script>
+
+</body>
+
+</html>

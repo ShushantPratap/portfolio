@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+
+<style>
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium';
+}
+#header, #addForm{
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#header h1{
+  margin: 5px;
+  text-transform: uppercase;
+  color: #402a23;
+  font-family: 'Kanit', cursive;
+}
+#search-bar{
+  flex-grow: 1;
+  padding: 5px 20px;
+}
+#search-bar input{
+  width: 220px;
+  height: 35px;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  padding: 5px 15px;
+  border-radius: 30px;
+  border: 3px solid #9a9999;
+  float: right;
+}
+#addForm{
+  background: #1d1716;
+}
+input, select, #save-button{
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  padding: 5px 15px;
+  margin: 5px;
+  border: 0;
+  border-radius: 20px;
+}
+#addForm select{
+  width: 150px;
+  text-transform: uppercase;
+}
+#save-button, #save-edit{
+  width: 150px !important;
+  background:#f3bc77;
+  color: #1d1716;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#save-button:hover{
+  background-color: #fcd4a4;
+}
+#editForm{
+  width: 100%;
+  height: 100vh;
+  background-color: #cccccc88;
+  position: fixed;
+  top: 0;
+  display: none;
+}
+.popperAnimation{
+  display: flex !important;
+  animation: popper;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes popper{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+}
+}
+.editForm{
+  width: 300px;
+  height: 250px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #1d1716;
+}
+#editForm #close-popper{
+  width: 30px;
+  padding: 6px;
+  float: right;
+  border-radius: 25px;
+  transition: .3s;
+}
+#editForm #close-popper:hover{
+  color: #e74c3c;
+}
+#editForm input,#editForm select, #save-button{
+  width: 95%;
+}
+#editForm select{
+  text-transform: uppercase;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+table tr:nth-child(even){
+  background-color: #e2f1dd;
+}
+table td{
+  padding: 5px;
+  height: auto;
+  font-size: 18px;
+}
+table td.checkbox{
+  width: 20px;
+  padding: 10px;
+}
+table td input[type="checkbox"]{
+  width: 15px;
+  height: 15px;
+}
+table .col{
+  width: 120px;
+}
+.delete-btn, .edit-btn{
+  width: 100%;
+  height: 30px;
+  background:#e74c3c;
+  color: #fff;
+  border:0;
+  padding: 4px 10px;
+  margin: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.edit-btn{
+  background: #27ae60;
+}
+.success-message, .error-message{
+  background: #e2f1dd;
+  font-size: 20px;
+  text-transform: capitalize;
+  height: 0;
+  color: #27ae60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s;
+  overflow: hidden;
+}
+.error-message{
+  color: #e74c3c;
+}
+.message{
+  height: 50px;
+}
+.checkboxActive{
+  text-decoration: line-through;
+}
+.oops{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-transform: capitalize;
+}
+.oops h1{
+  color: #402a23;
+  font-size: 60px;
+}
+@media only screen and (max-width: 600px) {
+  #search-bar{
+    display: flex;
+    justify-content: center;
+  }
+  input, #save-button{
+  flex-grow: 1;
+  }
+  select{
+    flex-grow: 1;
+  }
+  #addForm #save-button{
+    flex-grow: 0;
+  }
+}
+</style>
+
+</head>
+<body>
+
+  <div id="header">
+    <h1>to do list</h1>
+    <div id="search-bar">
+      <input type="text" id="search" onkeyup="taskSearch()" autocomplete="off" placeholder="Search">
+    </div>
+  </div>
+  
+  <form id="addForm">
+    <input type="text" placeholder="Enter Your Task" required>
+    <select>
+      <option value="">days</option>
+      <option value="SUNDAY">sunday</option>
+      <option value="MONDAY">monday</option>
+      <option value="TUESDAY">tuesday</option>
+      <option value="WEDNESDAY">wednesday</option>
+      <option value="THURSDAY">thursday</option>
+      <option value="FRIDAY">friday</option>
+      <option value="SATURDAY">saturday</option>
+    </select>
+    <input type="date">
+      <input type="submit" id="save-button" value="Save">
+  </form>
+  
+  <div class="error-message"></div>
+  <div class="success-message">this is wrong field</div>
+  
+  <div id="editForm">
+    <div class="editForm">
+      <input type="submit" id="close-popper" value="X">
+      <input type="text" placeholder="Enter Your Task">
+      <select>
+        <option value="">days</option>
+        <option value="SUNDAY">sunday</option>
+        <option value="MONDAY">monday</option>
+        <option value="TUESDAY">tuesday</option>
+        <option value="WEDNESDAY">wednesday</option>
+        <option value="THURSDAY">thursday</option>
+        <option value="FRIDAY">friday</option>
+        <option value="SATURDAY">saturday</option>
+      </select>
+      <input type="date">
+      <input type="submit" id="save-edit" value="Save">
+    </div>
+  </div>
+  
+  <div class="oops">
+    <h1>Oops!</h1>
+    <h2>no list avalible.</h2>
+  </div>
+
+  <table id="table-data"></table>
+
+
+
+<script>
+
+let form = document.getElementById("addForm"),
+inpElement = form.querySelectorAll("#addForm input"),
+days = form.querySelector("#addForm select"),
+display = document.getElementById("table-data"),
+errorMsg = document.querySelector(".error-message"),
+successMsg = document.querySelector(".success-message"),
+popper = document.getElementById("editForm");
+// 1-Set-a-list-from-localStorage
+const addList=()=>{ 
+  let list = {
+    checkBox : "",
+    task : inpElement[0].value,
+    taskDay : days.value,
+    taskDate : inpElement[1].value
+  };
+  let listData = JSON.stringify(list);
+  let keys = Object.keys(localStorage),
+  key = keys.length;
+  if(inpElement[0].value==""){
+    inpElement[0].focus();
+    errorMsg.innerHTML="the enter task field is required.";
+    errorMsg.classList.add("message");
+    setTimeout(function(){
+      errorMsg.classList.remove("message");
+    },3000);
+  }else{
+    for(i=0; i<=key; i++){
+      if(keys.includes(`${i}`)!=true){
+        key = i;
+        break;
+      }
+    }
+    form.reset();
+    successMsg.innerHTML="task added.";
+    successMsg.classList.add("message");
+    setTimeout(function(){
+      successMsg.classList.remove("message");
+    },3000);  
+    localStorage.setItem(key, listData);
+  }
+};
+
+// 2-Get-a-list-from-localStorage
+const loadList=()=>{
+  let keys = Object.keys(localStorage),
+  key = keys.length;
+  let tableData="";
+  if(key>0){
+    let notFound = document.querySelector(".oops");
+    notFound.style.display="none";
+  }
+  for(i=0; i<key; i++){
+    let object = JSON.parse(localStorage.getItem(keys[i]));
+      tableData += `
+      <tr data-key='${keys[i]}'>
+        <td class="checkbox"><input type="checkbox" ${object.checkBox}></td>
+        <td class="task">${object.task}</td>
+        <td>${object.taskDay}</td>
+        <td class="col">${object.taskDate}</td>
+        <td class="col">
+          <button class="edit-btn">edit</button>
+          <button class="delete-btn">remove</button>
+        </td>
+      </tr>
+    `;
+  }
+  display.innerHTML = tableData;
+  listEdit();
+};
+loadList();
+
+// 3-Save-button--
+inpElement[2].addEventListener("click", (e)=>{
+  e.preventDefault();
+  addList();
+  loadList();
+});
+
+// 4-Table-list
+function listEdit(){
+  display.querySelectorAll("tr").forEach(element =>{
+    let inpEl = element.querySelector("input");
+    let key = element.dataset.key;
+    let listItem = JSON.parse(localStorage.getItem(key));
+
+  // 5-List-checkbox--
+    inpEl.onclick=()=>{
+      let item;
+      if(inpEl.checked){
+        item = JSON.stringify({
+          checkBox: 'checked', 
+          task: listItem.task,
+          taskDay: listItem.taskDay,
+          taskDate: listItem.taskDate
+        });
+      }else{
+        item = JSON.stringify({
+          checkBox: '', 
+          task: listItem.task,
+          taskDay: listItem.taskDay,
+          taskDate: listItem.taskDate
+        });
+      }
+      element.classList.toggle("checkboxActive");
+      localStorage.setItem(key, item);
+      loadList();
+    };
+    inpEl.checked?element.classList.add("checkboxActive"):element.classList.remove("checkboxActive");
+
+  // 6-Edit-button--
+    element.querySelector(".edit-btn").onclick=()=>{
+      let editInput = popper.getElementsByTagName("input"),
+      editDay = popper.querySelector("select");
+      popper.classList.add("popperAnimation");
+      editInput[0].onclick=()=>{
+        popper.classList.remove("popperAnimation");
+      };
+      editInput[1].value = listItem.task;
+      editDay.value = listItem.taskDay;
+      editInput[2].value = listItem.taskDate;
+      editInput[3].onclick=()=>{
+        let editItem = JSON.stringify({
+          checkBox: listItem.checkBox, 
+          task: editInput[1].value,
+          taskDay: editDay.value,
+          taskDate: editInput[2].value
+        });
+        localStorage.setItem(key, editItem);
+        popper.classList.remove("popperAnimation");
+        successMsg.innerHTML="task edited";
+        successMsg.classList.add("message");
+        setTimeout(function(){
+          successMsg.classList.remove("message");
+        },3000);
+        loadList();
+      };
+    };
+  // 7-Remove-list-item--
+    element.querySelector(".delete-btn").onclick=()=>{
+      localStorage.removeItem(key);
+      errorMsg.innerHTML="task removed";
+      errorMsg.classList.add("message");
+      setTimeout(function(){
+        errorMsg.classList.remove("message");
+      },3000);
+      loadList();
+    };
+  });
+}
+
+// 8-Search-task--
+function taskSearch(){
+  let searchField = document.getElementById("search").value.toUpperCase();
+  let trTag = display.querySelectorAll("tr");
+  for(let i=0; i<trTag.length; i++){
+    let match = trTag[i].querySelector(".task");
+    if(match){
+      let textvalue = match.textContent || match.innerHTML;
+      if(textvalue.toUpperCase().indexOf(searchField) >= 0){
+        trTag[i].style.display = "";
+      }else{
+        trTag[i].style.display = "none";
+      }
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>

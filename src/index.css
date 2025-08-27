@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  font-family: "Nova Slim", system-ui;
+  font-style: normal;
+  /* font-weight: 400; */
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dark{
+  background: linear-gradient(#110815, #000000);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.text-theme{
+  color: #9b59b6;
+}
+.bg-theme{
+  background-color: #9b59b6;
+}
+.border-theme{
+  border-color: #9b59b6;
+}

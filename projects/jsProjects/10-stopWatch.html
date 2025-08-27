@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>StopWatch</title>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+body{
+    background: rgb(251, 233, 251);
+}
+
+#stopwatch{
+    width: 700px;
+    margin: 1% auto;
+    padding: 5% 0;
+    color: white;
+    text-align: center;
+    background-color: #282828;
+    box-shadow: 1px 2px 4px 2px #717070;
+    border-radius: 5%;
+}
+ 
+#watch {
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+ 
+button {
+    width: 100px;
+    height: 30px;
+    background-color: #202020;
+    color: white;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+ 
+button:hover {
+    background-color: #fff;
+    color: #202020;
+    cursor: pointer;
+}
+
+#laps{
+    width: 600px;
+    font-size: 25px;
+    background-color: #9c9999;
+    margin: -0.5% auto;
+}
+
+</style>
+
+</head>
+<body>
+    <div id="stopwatch">
+        <h1>Stop Watch </h1>
+        <div id="watch">00:00:00</div>
+        <button onclick="start(true)" id="start-btn">Start</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="lap()" id="count">Lap</button>
+    </div>
+    <div id="laps"></div>
+
+
+    <script>
+
+        var stopwatch = document.getElementById("watch");
+        var startBtn = document.getElementById("start-btn");
+        var timeoutId = null;
+        var ms = 0;
+        var sec = 0;
+        var min = 0;
+ 
+        // function to start stopwatch 
+
+        function start(go){
+
+            if (go) {
+                startBtn.disabled = true;
+            }
+ 
+            timeoutId = setTimeout(function(){
+                ms = parseInt(ms);
+                sec = parseInt(sec);
+                min = parseInt(min);
+ 
+                ms++;
+ 
+                if (ms == 100) {
+                    sec = sec + 1;
+                    ms = 0;
+                }
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+                }
+                //condition single digit before 0
+                if (ms < 10) {
+                    ms = '0' + ms;
+                }
+                if (sec < 10) {
+                    sec = '0' + sec;
+                }
+                if (min < 10) {
+                    min = '0' + min;
+                }
+ 
+                stopwatch.innerHTML = min + ':' + sec + ':' + ms;
+ 
+                // calling start() function recursivly to continue stopwatch
+                start();
+ 
+            }, 10); // setTimeout delay time 10 milliseconds
+        }
+ 
+        // function to pause stopwatch 
+        function pause() {
+            clearTimeout(timeoutId);
+            startBtn.disabled = false;
+        }
+ 
+        //function to reset stopwatch
+        function reset() {
+            ms = 0;
+            sec = 0;
+            min = 0;
+            clearTimeout(timeoutId);
+            stopwatch.innerHTML = '00:00:00';
+            startBtn.disabled = false;
+        }
+
+        //function to create laps
+        function lap(){
+            var p = document.createElement("h1");
+            var timer = min + ':' + sec + ':' + ms;
+            var ptext = document.createTextNode("# "+timer);
+
+            p.appendChild(ptext);
+            var lap = document.getElementById("laps");
+
+            lap.appendChild(p);
+            //startBtn.disabled = false;
+            
+        }
+ 
+
+    </script>
+
+</body>
+</html>

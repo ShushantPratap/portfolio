@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Review Page</title>
+  <script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    
+}
+
+body{
+    background: linear-gradient(brown,rgb(241, 143, 58));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/*** Star rating to fill ***/
+.fa-solid{
+    color: orange;
+    text-shadow: 0px 0px 4px yellow, 0px 0px 5px orange;
+}
+.fa-regular{
+    color: yellow;
+}
+
+.review{
+    width: 400px;
+    height: 350px;
+    font-size: 50px;
+    color: yellow;
+    margin: 0 auto;
+    background:transparent;
+    opacity: 1;
+    box-shadow: 1px 0px 5px gray, 1px 0px 5px black, 1px 0px 5px grey;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    top: -780px;
+    transition: 1s;
+}
+
+.review i{
+    font-size: 50px;
+    margin: 50px 0px 30px 0px;
+}
+.review h2{
+    font-size: 25px;
+}
+
+.review input{
+    width: 300px;
+    height: 70px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #f2f2f2;
+}
+
+.review button{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(254, 112, 35);
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+
+}
+
+.a{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    left: 80px;
+    top: 20px;
+    background-color: orange;
+    box-shadow: 5px 2px 30px orange, 0px 0px 30px brown,5px 0px 30px orangered;
+    border-radius: 50%;
+}
+.b{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    left: 75%;
+    top: -150px;
+    transform: rotate(45deg);
+    background-color: green;
+    box-shadow: 5px 2px 30px green, 0px 0px 30px brown,5px 0px 30px brown;
+    border-radius: 50px;
+}
+.c{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: -180px;
+    left: 40%;
+    transform: rotate(30deg);
+    background-color: violet;
+    box-shadow: 5px 2px 30px violet, 0px 0px 30px orangered,5px 0px 30px brown;
+    border-radius: 20px;
+    display: in;
+}
+
+</style>
+
+</head>
+<body>
+
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+
+<div class="review" id="review">
+
+    <i class="fa-regular fa-star" id="rate-1"></i>
+    <i class="fa-regular fa-star" id="rate-2"></i>
+    <i class="fa-regular fa-star" id="rate-3"></i>
+    <i class="fa-regular fa-star" id="rate-4"></i>
+    <i class="fa-regular fa-star" id="rate-5"></i>
+    <h2 id="ans"></h2>
+    <input type="text">
+    <br>
+    <button onclick="submit()">Submit</button>
+</div>
+    
+<script>
+
+var rate1 = document.getElementById("rate-1");
+var rate2 = document.getElementById("rate-2");
+var rate3 = document.getElementById("rate-3");
+var rate4 = document.getElementById("rate-4");
+var rate5 = document.getElementById("rate-5");
+var ans = document.getElementById("ans");
+
+ans.style.color="white"
+    
+rate1.onclick=function(){
+    rate1.classList.add("fa-solid");
+    rate2.classList.remove("fa-solid");
+    rate3.classList.remove("fa-solid");
+    rate4.classList.remove("fa-solid");
+    rate5.classList.remove("fa-solid");
+    
+    ans.innerText="You Broke me.😔";
+    
+}
+    
+rate2.onclick=function(){
+    rate1.classList.add("fa-solid");
+    rate2.classList.add("fa-solid");
+    rate3.classList.remove("fa-solid");
+    rate4.classList.remove("fa-solid");
+    rate5.classList.remove("fa-solid");
+    
+    ans.innerText="You Don't Like me.😞";
+}
+    
+rate3.onclick=function(){
+    rate1.classList.add("fa-solid");
+    rate2.classList.add("fa-solid");
+    rate3.classList.add("fa-solid");
+    rate4.classList.remove("fa-solid");
+    rate5.classList.remove("fa-solid");
+    
+    ans.innerText="Thank You!😐";
+}
+    
+rate4.onclick=function(){
+    rate1.classList.add("fa-solid");
+    rate2.classList.add("fa-solid");
+    rate3.classList.add("fa-solid");
+    rate4.classList.add("fa-solid");
+    rate5.classList.remove("fa-solid");
+    
+    ans.innerText="You Like me.😀";
+}
+    
+rate5.onclick=function(){
+    rate1.classList.add("fa-solid");
+    rate2.classList.add("fa-solid");
+    rate3.classList.add("fa-solid");
+    rate4.classList.add("fa-solid");
+    rate5.classList.add("fa-solid");
+    ans.innerText="You Love me.😍";
+}
+
+function submit(){
+    var div = document.getElementById("review");
+        
+    div.innerHTML="Thank You! ✅"
+    div.style.width="500px";
+    div.style.height="100px";
+    div.style.padding="20px";
+}
+
+
+</script>
+
+
+</body>
+</html>

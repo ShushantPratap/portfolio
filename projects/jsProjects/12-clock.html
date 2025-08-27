@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Clock</title>
+
+<style>
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: yellow;
+}
+
+body{
+    background-attachment: fixed;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+/*** circle clock ***/
+.circle{
+    margin: 10px auto 20px auto;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: transparent;
+    border: 5px solid black;
+    box-shadow: 1px 1px 5px darkblue, -1px -1px 5px darkblue, 0 0 10px red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: black;
+}
+
+.circle .a{
+    position: absolute;
+    width: 440px;
+    height: 5px;
+    border-left-width: 50px;
+    border-left-style: inherit;
+    transform: rotate(30deg);
+}
+.circle .a::before{
+    content: "";
+    position: absolute;
+    left: 335px;
+    width: 55px;
+    height: 5px;
+    background: yellow;
+}
+.circle .b{
+    position: absolute;
+    width: 440px;
+    height: 5px;
+    border-left-width: 50px;
+    border-left-style: inherit;
+    transform: rotate(-30deg);
+}
+.circle .b::before{
+    content: "";
+    position: absolute;
+    left: 335px;
+    width: 55px;
+    height: 5px;
+    background: yellow;
+}
+.circle .c{
+    position: absolute;
+    width: 440px;
+    height: 5px;
+    border-left-width: 50px;
+    border-left-style: inherit;
+    transform: rotate(120deg);
+}
+.circle .c::before{
+    content: "";
+    position: absolute;
+    left: 335px;
+    width: 55px;
+    height: 5px;
+    background: yellow;
+}
+.circle .d{
+    position: absolute;
+    width: 440px;
+    height: 5px;
+    border-left-width: 50px;
+    border-left-style: inherit;
+    transform: rotate(-120deg);
+}
+.circle .d::before{
+    content: "";
+    position: absolute;
+    left: 335px;
+    width: 55px;
+    height: 5px;
+    background: yellow;
+}
+
+.circle #sec{
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    transform: rotate(270deg);
+    background-color: red;
+}
+.circle #sec::before{
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.circle #min{
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    transform: rotate(270deg);
+    background-color: green;
+}
+.circle #min::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: green;
+}
+
+.circle #hr{
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    transform: rotate(270deg);
+    background-color: yellow;
+}
+.circle #hr::before{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: yellow;
+}
+
+.time{
+    width: 450px;
+    height: 450px;
+    margin: -470px auto 1% auto;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+}
+.time .t3{
+    position: relative;
+    float: right;
+    top: 187px;
+    margin: 10px;
+}
+.time .t6{
+    position: absolute;
+    top: 405px;
+    margin: 0 0 0 10px;
+}
+.time .t9{
+    position: relative;
+    float: left;
+    top: 187px;
+    margin: 10px;
+}
+
+
+#clock{
+    margin: 0 auto;
+    background: transparent;
+    text-align: center;
+    width: 300px;
+    font-size: 50px;
+    border-radius: 50px;
+    border: 5px solid black;
+    box-shadow: 1px 1px 5px darkblue, -1px -1px 5px darkblue, 0 0 10px red;    
+}
+
+</style>
+
+</head>
+<body>
+
+    <div class="circle">
+        <div id="sec"></div>
+        <div id="min"></div>
+        <div id="hr"></div>
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+        <div class="d"></div>
+    </div>
+<div class="time">
+    <span class="t3">3</span>
+    <span class="t6">6</span>
+    <span class="t9">9</span>
+    <span class="t12">12</span>
+</div>
+  <div id="clock"></div>
+
+<script>
+    function updateClock() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var seconds = currentTime.getSeconds();
+
+      // add leading zeros to minutes and seconds
+      minutes = (minutes < 10 ? "0" : "") + minutes;
+      seconds = (seconds < 10 ? "0" : "") + seconds;
+
+      // determine AM or PM
+      var meridiem = (hours < 12) ? "AM" : "PM";
+
+      // convert to 12-hour format
+      hours = (hours > 12) ? hours - 12 : hours;
+      hours = (hours == 0) ? 12 : hours;
+
+      // format the time string
+      var timeString = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+
+      // update the clock element
+      var clockElement = document.getElementById("clock");
+      clockElement.textContent = timeString;
+     
+      // circle clock function ***
+    let secstick = document.getElementById("sec"),
+          minstick = document.getElementById("min"),
+          hrstick  = document.getElementById("hr");
+
+    let SecondMinuntediv = 360/60,
+        Hourdiv = 360/12;
+
+    secstick.style.rotate = SecondMinuntediv * seconds + "deg"
+    minstick.style.rotate = SecondMinuntediv * minutes + "deg"
+    hrstick.style.rotate = Hourdiv * hours + "deg"
+    
+    }
+
+    // update the clock every second
+    setInterval(updateClock, 100);
+
+
+
+
+  </script>
+
+</body>
+</html>

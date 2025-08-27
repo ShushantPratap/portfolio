@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Orders</title>
+    <script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <button id="openMenu">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+        <div class="menu">
+            <a href="#" class="close-menu">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </a>
+            <a href="index.html">HOME</a>
+            <a href="">Account</a>
+            <a href="#">track order</a>
+            <a href="collections.php?collection='new'">new arrivals</a>
+            <a href="collections.php?collection='best'">best selling</a>
+            <a href="#">customer support</a>
+            <a href="#">visit store</a>
+            <a href="#">About us</a>
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+            </div>
+            <div class="welcome">
+                <h2>Hi</h2>
+                <button>
+                    <a>Log in</a>
+                </button>
+            </div>
+        </div>
+        <div class="logo">Logo</div>
+        <div class="search">
+            <input type="text" placeholder="Search" id="searchInput">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="cart-btn">
+            <a href="#" id="searchBarOpen">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <a href="cart.html" data-n="1">
+                <img src="icon/shopping-bag.png" alt="cart">
+                <span></span>
+            </a>
+        </div>
+    </nav>
+
+    <div id="container">
+        <div class="yourOrder">
+            <h2>your orders</h2>
+            <ul>
+                <li>
+                    <div class="view">
+                        <div class="image">
+                            <img src="img/2.jpg" alt="Jumpsuit">
+                        </div>
+                    <div class="name">
+                        <h2>Jumpsuit</h2>
+                        <h3>₹1299</h3>
+                    </div>
+                    <div class="size">
+                        <div class="clothSize">Size : XXL</div>
+                        <div class="clothcolor">Color : Red</div>
+                    </div>
+                    <div class="qnt">
+                        <p>2</p>
+                        <p class="time">
+                            <br>
+                            <span></span>
+                        </p>
+                    </div>
+                    </div>
+                    <div class="dlv">
+                        <button>cancel</button>
+                        <p>Arriving</p>
+                        <h4>Payment method : COD</h4>
+                        <div class="add">
+                            name:suny
+                            mobile:1234567890
+                            114/2 delhi 110091,
+                            india, holichawk
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/products.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

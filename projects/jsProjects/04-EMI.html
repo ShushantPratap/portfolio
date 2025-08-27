@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI</title>
+<style>
+
+form{width: 700px;
+    height: 300px;
+    background-color: burlywood;
+    padding: 20px;
+}
+
+h1{font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+input{
+    width: 150px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+span{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+button{
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<center>
+<form onsubmit="emi()">
+
+    <h1>EMI Calculate</h1>
+    <span>Amount:</span> <input type="number" id="a" placeholder="Loan Amount.....">
+    <span>Intrest Rate %:</span> <input type="number" id="ir" placeholder="Intrest Rate%....">
+    <br>
+    <span>Months:</span> <input type="number" id="m" placeholder="Months....">
+    <br>
+    <button>Calculate</button>
+
+</form>
+</center>
+
+<script>
+
+function emi(){
+    var amount=parseInt(document.getElementById("a").value);
+         rate=document.getElementById("ir").value;
+         month=document.getElementById("m").value;
+
+    const interest = (amount*(rate*0.01))/month;
+    const total = ((amount/month)+interest).toFixed();
+    
+document.write("-------LOAN SUMMARY-------<br><br>");
+
+    const temi = total*month;
+   /* const x = temi+amount; */
+
+document.write("1 MONTH INTEREST------"+interest.toFixed()+"Rs<br>");
+document.write("PER MONTH PAY-------"+total+"Rs<br><br>");
+
+document.write("LOAN AMOUNT---------"+amount+"Rs<br>");
+document.write("INTREST PAYABLE-----"+total+"Rs<br>");
+document.write("TOTAL EMI --------------"+temi+"Rs<br>");
+document.write("TOTAL PAYABLE-------"+temi+"Rs");
+ 
+}
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Word</title>
+    <style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui,'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background: #386059;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+h1{
+    width: 400px;
+    color: red;
+}
+h4{
+    font-size: 25px;
+    margin: 10px;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+table{
+    width:100%;
+    height: auto;
+    text-align: left;
+    text-transform: uppercase;
+    color: #fff;
+}
+table caption{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 20px;
+    border: 1px solid #eee;
+}
+table tr th, td{
+    font-size: 25px;
+    padding: 10px;
+}
+
+.timeOut{
+    width: auto;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+}
+.timeOut h3{
+    font-size: 25px;
+    padding: 5px 10px;
+    background-color: #003956;
+    border-radius: 5px;
+}
+p{
+    width: 100%;
+    font-size: larger;
+	display: grid;
+    column-width: 20px;
+	grid-template-columns: 1fr 100%;
+	grid-gap: 3px;
+    margin: 20px;
+    text-transform: capitalize;
+    align-items: center;
+}
+input{
+    margin: 5px;
+    position: relative;
+    top: 3px;
+}
+.display{
+    display: none;
+    width: 80%;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+}
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  width: 100%;
+  height: fit-content;
+  color: #000;
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* Next & previous buttons */
+.btn{
+    width: 80%;
+    padding: 10px;
+}
+.prev, .next, .finishBtn, #startBtn{
+  cursor: pointer;
+  padding: 10px 30px;
+  background: #134c69;
+  color: white;
+  text-transform: capitalize; 
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border: 1px solid #013e38;
+  box-shadow: 0 0 10px #003956;
+  border-radius: 10px;
+  user-select: none;
+}
+#startBtn{
+    background-color: #ff3232;
+}
+.prev{
+    float: left;
+}
+.next{
+    float: right;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover, .finishBtn:hover {
+  background-color: #00c968db;
+}
+.finishBtn{
+    margin-top: 50px;
+    background: #ff3232;    
+}
+/* The dots/bullets/indicators */
+.dots{
+    width: 80%;
+    padding: 20px 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.dot {
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+  padding: 5px;
+  color: #000;
+  font-size: 20px;
+  background-color: #eee;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px #1f1f1fa2;
+  transition: 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #00c968db;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.3s;
+}
+@keyframes fade {
+  from {opacity: .2}
+  to {opacity: 1;}
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="startBtn" onclick="start(true)">Start</button>
+        <div class="timeOut">
+            <h3>⏰ <span>60 : 00</span></h3>
+            <h4>MS Word Insert tab test.</h4>
+        </div>
+        <div class="display"></div>
+        <div class="btn">
+            <button class="prev" onclick="plusBtn(-1)">previous</button>
+            <button class="next" onclick="plusBtn(1)">next</button>
+        </div>
+        <div class="dots"></div>
+        <button class="finishBtn" onclick="result()">Finish Test</button>
+    </div>
+
+<script>
+
+const question = [
+    {
+        que : "Which of the following is the 2nd tab in the Ribbon?",
+        a : "home", 
+        b : "insert", 
+        c : "page layout", 
+        d : "references",
+        ans : "insert"
+    },
+    {
+        que : "Which of the following can be added using Insert tab?",
+        a : "table", 
+        b : "picture", 
+        c : "clip art", 
+        d : "all of the above",
+        ans : "all of the above" 
+    },
+    {
+        que : "Which of the following is NOT a command in Insert tab?",
+        a : "page", 
+        b : "table", 
+        c : "link", 
+        d : "style",
+        ans : "style" 
+    },
+    {
+        que : "What group would allow you to insert a hyperlink into your document?",
+        a : "Illustrations", 
+        b : "Links", 
+        c : "Add-ins", 
+        d : "Pages",
+        ans : "Links" 
+    },
+    {
+        que : "Which of the following objects can you insert into a document using the 'Insert' tab in Microsoft Word?",
+        a : "Picture", 
+        b : "Table", 
+        c : "Text Box", 
+        d : "All of the above",
+        ans : "All of the above" 
+    },
+    {
+        que : "Which feature under the 'Insert' tab should you use to add mathematical equations to your document?",
+        a : "Symbol", 
+        b : "Equation", 
+        c : "Text Box", 
+        d : "Header",
+        ans : "Equation" 
+    },
+    {
+        que : "To insert special characters or symbols not found on the keyboard, which option under the 'Insert' tab should you use?",
+        a : "Hyperlink", 
+        b : "Symbol", 
+        c : "Page Break", 
+        d : "Quick Parts",
+        ans : "Symbol" 
+    },
+    {
+        que : "Which feature in the 'Insert' tab allows you to quickly insert the current date and time into your document?",
+        a : "Page Number", 
+        b : "Date & Time", 
+        c : "Quick Parts", 
+        d : "Bookmark",
+        ans : "Date & Time" 
+    },
+    {
+        que : "Which option under the 'Insert' tab helps you quickly add a professional-looking cover page template to your document?",
+        a : "WordArt", 
+        b : "SmartArt", 
+        c : "Text Box", 
+        d : "Cover Page",
+        ans : "Cover Page" 
+    },
+    {
+        que : "Which feature under the 'Insert' tab allows you to add a horizontal line to separate sections in your document?",
+        a : "Shapes", 
+        b : "Page Break", 
+        c : "Header", 
+        d : "Horizontal Line",
+        ans : "Horizontal Line" 
+    },
+    {
+        que : "Which of the following can be changed using Page layout tab?",
+        a : "theme", 
+        b : "page setup", 
+        c : "arrange", 
+        d : "all of the above",
+        ans : "all of the above" 
+    },
+    {
+        que : "If you were adding an online picture to your document, which command would you use?",
+        a : "Online Picture", 
+        b : "Hyperlink", 
+        c : "Picture", 
+        d : "Word Art",
+        ans : "Online Picture" 
+    },
+    {
+        que : "The original command groups on the Insert tab does not include this feature which allows you to have access to an additional commands?",
+        a : "quick access toolbar", 
+        b : "more commands", 
+        c : "menu", 
+        d : "dialogue box launcher",
+        ans : "dialogue box launcher" 
+    },
+    {
+        que : "What is a predefined way to add your name and date to the top of every page without having to type it on each page?",
+        a : "Bottom", 
+        b : "Header", 
+        c : "Topper", 
+        d : "Footer",
+        ans : "Header" 
+    },
+    {
+        que : "When you insert a Picture, what tab appears?",
+        a : "Picture Tools Insert Tab", 
+        b : "Picture Tools Format Tab", 
+        c : "Picture Tools Design Tab", 
+        d : "Picture Tools Layout Tab",
+        ans : "Picture Tools Format Tab" 
+    },
+    {
+        que : "What symbol does your cursor turn when you insert a shape in your document?",
+        a : "The shape", 
+        b : "Plus (+)", 
+        c : "An Arrow", 
+        d : "A picture",
+        ans : "Plus (+)" 
+    },
+    {
+        que : "What is it called when you take away unwanted parts of your picture?",
+        a : "Editing", 
+        b : "Resizing", 
+        c : "Cropping", 
+        d : "Removing",
+        ans : "Cropping" 
+    },
+    {
+        que : "How many command groups does the Table Tools Layout Tab consist of?",
+        a : "4 command groups", 
+        b : "7 command groups", 
+        c : "3 command groups", 
+        d : "5 command groups",
+        ans : "7 command groups" 
+    },
+    {
+        que : "This is one tab that appears when you insert a SmartArt Graphic in your document?",
+        a : "Picture Tools Design Tab", 
+        b : "Drawing Tools Design Tab", 
+        c : "SmartArt Tools Design Tab", 
+        d : "Table Tools Design Tab",
+        ans : "SmartArt Tools Design Tab" 
+    },
+    {
+        que : "How many command groups does the Table Tools Design Tab have?",
+        a : "3 command groups", 
+        b : "5 commands groups", 
+        c : "6 command groups", 
+        d : "4 command groups",
+        ans : "3 command groups" 
+    },
+    {
+        que : "This tab also appears when inserting a SmartArt Graphic?",
+        a : "Picture Tools Format Tab", 
+        b : "SmartArt Format Tab", 
+        c : "SmartArt Layout Tab", 
+        d : "Table Tools Format Tab",
+        ans : "SmartArt Format Tab" 
+    },
+    {
+        que : "What command group under the Insert tab would you insert a text box into your document?",
+        a : "Text group", 
+        b : "Illustrations group", 
+        c : "Add-ins group", 
+        d : "Pages group",
+        ans : "Text group" 
+    },
+    {
+        que : "How many command groups are on the insert tab?",
+        a : "8 command groups", 
+        b : "1 command group", 
+        c : "5 command groups", 
+        d : "10 command groups",
+        ans : "10 command groups" 
+    },
+    {
+        que : "What is a predefined way to add a page number at the bottom of your page to show up on all your pages without you typing it on each page?",
+        a : "Bottom", 
+        b : "Header", 
+        c : "Topper", 
+        d : "Footer",
+        ans : "Footer" 
+    },
+    {
+        que : "What tab appears when you insert a shape in your document?",
+        a : "Drawing Tools Layout Tab", 
+        b : "Drawing Tools Design Tab", 
+        c : "Drawing Tools Format Tab", 
+        d : "Drawing Tools Edit Tab",
+        ans : "Drawing Tools Format Tab" 
+    },
+    {
+        que : "How can you insert a table into your Word document using the 'Insert' tab?",
+        a : "By clicking 'Table' and selecting the desired number of rows and columns", 
+        b : "By dragging and dropping from the 'Shapes' option", 
+        c : "By using the 'Quick Parts' feature", 
+        d : " By inserting a 'Text Box' and drawing a table inside it",
+        ans : "By clicking 'Table' and selecting the desired number of rows and columns" 
+    },
+    {
+        que : "What is the primary use of the 'Quick Parts' feature found under the 'Insert' tab in MS Word?",
+        a : "To insert predefined text blocks and properties", 
+        b : "To add new fonts to the document", 
+        c : "To draw custom shapes", 
+        d : "To create a new document template",
+        ans : "To insert predefined text blocks and properties" 
+    },
+    {
+        que : "Which option allows you to add a hyperlink to your document using the 'Insert' tab?",
+        a : "Bookmark", 
+        b : "Hyperlink", 
+        c : "Cross-reference", 
+        d : "Text Box",
+        ans : "Hyperlink" 
+    },
+    {
+        que : "Under the 'Insert' tab, how can you add a header or footer to your Word document?",
+        a : "By using the 'Header & Footer' option", 
+        b : "By selecting 'Page Number'", 
+        c : "By clicking on 'Cover Page'", 
+        d : "By choosing 'WordArt'",
+        ans : "By using the 'Header & Footer' option" 
+    },
+    {
+        que : "Which feature in the 'Insert' tab helps you to add a professional cover page to your document?",
+        a : "Text Box", 
+        b : "Cover Page", 
+        c : "SmartArt", 
+        d : "Signature Line",
+        ans : "Cover Page" 
+    },
+    {
+        que : "What is the purpose of the 'SmartArt' feature in the 'Insert' tab?",
+        a : "To insert complex equations", 
+        b : "To add organizational charts and diagrams", 
+        c : "To format text in multiple columns", 
+        d : "To draw freehand shapes",
+        ans : "To add organizational charts and diagrams" 
+    },
+    {
+        que : "How can you insert a screenshot directly into your Word document from the 'Insert' tab?",
+        a : "By clicking on 'Screenshot' and selecting an available window or screen clipping", 
+        b : "By using the 'Shapes' option to draw a picture", 
+        c : " By selecting 'WordArt' and converting text into an image", 
+        d : "By using 'Object' to embed an external file",
+        ans : "By clicking on 'Screenshot' and selecting an available window or screen clipping" 
+    },
+    {
+        que : " What does the 'Text Box' option in the 'Insert' tab allow you to do?",
+        a : "Add a preformatted section for entering text", 
+        b : "Insert a table with predefined styles", 
+        c : "Embed a video from the web", 
+        d : "Add a footnote to your document",
+        ans : "Add a preformatted section for entering text" 
+    },
+    {
+        que : "What is the function of the 'Object' feature found under the 'Insert' tab in MS Word?",
+        a : "To insert non-text items like Excel spreadsheets or PDF files", 
+        b : "To create and manage bookmarks within the document", 
+        c : "To insert page breaks", 
+        d : "To add bullet points to text",
+        ans : "To insert non-text items like Excel spreadsheets or PDF files" 
+    },
+    {
+        que : "How can you add page numbers to your Word document using the 'Insert' tab?",
+        a : "By selecting 'Page Number' and choosing the desired format and position", 
+        b : "By clicking on 'Cover Page'", 
+        c : "By inserting a 'Text Box' and manually typing page numbers", 
+        d : "By using the 'Shapes' option to draw page numbers",
+        ans : "By selecting 'Page Number' and choosing the desired format and position" 
+    },
+    {
+        que : "How do you add geometric shapes like circles or arrows to your document using the 'Insert' tab?",
+        a : "By selecting 'Shapes' and choosing the desired shape from the dropdown menu", 
+        b : "By using 'SmartArt'", 
+        c : "By clicking 'Quick Parts'", 
+        d : "By inserting a 'Table' and customizing it",
+        ans : "By selecting 'Shapes' and choosing the desired shape from the dropdown menu" 
+    },
+    {
+        que : "How can you insert an image from your computer into your Word document using the 'Insert' tab?",
+        a : "By selecting 'Pictures' and navigating to the image file on your computer", 
+        b : "By using 'Clip Art'", 
+        c : "By clicking 'Screenshot'", 
+        d : "By inserting 'WordArt' and styling it",
+        ans : "By selecting 'Pictures' and navigating to the image file on your computer" 
+    },
+    {
+        que : "What does the 'Online Pictures' option in the 'Insert' tab enable you to do?",
+        a : "Insert images from online sources directly into your document", 
+        b : "Add videos from the web", 
+        c : "Create a table using online templates", 
+        d : "Insert a hyperlink to an online image",
+        ans : "Insert images from online sources directly into your document" 
+    },
+    {
+        que : "How can you embed an online video into your document using the 'Insert' tab?",
+        a : "By selecting 'Online Video' and pasting the video URL", 
+        b : "By clicking 'Picture' and uploading a video file", 
+        c : "By inserting a 'Text Box' and placing the video link inside", 
+        d : "By using 'WordArt' to style the video link",
+        ans : "By selecting 'Online Video' and pasting the video URL" 
+    },
+    {
+        que : "What can you include in a document's header or footer using the 'Insert' tab?",
+        a : "Page numbers, document title, and author name", 
+        b : "Quick Parts", 
+        c : "Cross-references", 
+        d : "All of the above",
+        ans : "All of the above" 
+    },
+    {
+        que : "What is the purpose of inserting a 'Bookmark' in a Word document using the 'Insert' tab?",
+        a : "To create a link to another document", 
+        b : "To mark a specific place in the document for quick navigation", 
+        c : "To insert a page break", 
+        d : "To add a symbol or special character",
+        ans : "To mark a specific place in the document for quick navigation" 
+    },
+    {
+        que : "How does the 'Cross-reference' feature under the 'Insert' tab help in a Word document?",
+        a : " It creates a new blank document", 
+        b : "It inserts an image from the internet", 
+        c : "It adds page numbers to the document", 
+        d : "It allows you to link to other parts of the document, such as headings, figures, or tables",
+        ans : "It allows you to link to other parts of the document, such as headings, figures, or tables" 
+    },
+    {
+        que : "How can you insert a chart into your Word document using the 'Insert' tab?",
+        a : "By clicking 'Shapes' and drawing a chart", 
+        b : "By using 'Text Box' to manually create a chart", 
+        c : "By selecting 'Chart' and choosing a chart type from the dialog box", 
+        d : "By adding 'WordArt' and styling it as a chart",
+        ans : "By selecting 'Chart' and choosing a chart type from the dialog box" 
+    },
+    {
+        que : "What is the primary purpose of the 'WordArt' feature in the 'Insert' tab?",
+        a : "To add stylized text with special effects", 
+        b : "To insert an image from your computer", 
+        c : "To create a table", 
+        d : "To add a page break",
+        ans : "To add stylized text with special effects" 
+    },
+    {
+        que : "How can you embed an existing file, such as a PDF or Excel spreadsheet, into your Word document using the 'Insert' tab?",
+        a : "By clicking 'Picture' and uploading the file", 
+        b : "By using 'Text Box' to link the file", 
+        c : "By using the 'Object' option and selecting 'Create from File'", 
+        d : "By inserting a 'Page Break'",
+        ans : "By using the 'Object' option and selecting 'Create from File'" 
+    },
+    {
+        que : "What is the purpose of the 'Signature Line' feature found under the 'Insert' tab?",
+        a : "To add a watermark to your document", 
+        b : "To provide a space for a handwritten signature", 
+        c : "To create a table with a signature field", 
+        d : "To insert an automatic date and time stamp",
+        ans : "To provide a space for a handwritten signature" 
+    },
+    {
+        que : "How does the 'Cross-reference' feature under the 'Insert' tab benefit the organization of a document?",
+        a : "It adds page breaks at specific points", 
+        b : "It links text to other parts of the document like figures, tables, or sections", 
+        c : "It allows you to insert images from the internet", 
+        d : "It inserts preformatted headers and footers",
+        ans : "It links text to other parts of the document like figures, tables, or sections" 
+    },
+    {
+        que : "What does the 'Add-ins' feature in the 'Insert' tab allow you to do?",
+        a : " Extend the functionality of Word with third-party tools", 
+        b : "Insert shapes and lines", 
+        c : "Add tables with advanced styles", 
+        d : "Create bookmarks within the document",
+        ans : " Extend the functionality of Word with third-party tools" 
+    },
+    {
+        que : "How can you add a 3D model into your Word document using the 'Insert' tab?",
+        a : "By inserting a 'Picture' and converting it to 3D", 
+        b : "By using 'SmartArt' to create a 3D effect", 
+        c : "By selecting '3D Models' and choosing a model from the library or your files", 
+        d : "By using 'Shapes' to draw a 3D shape",
+        ans : "By selecting '3D Models' and choosing a model from the library or your files" 
+    },
+    {
+        que : "What does the 'Icons' feature in the 'Insert' tab allow you to do?",
+        a : "Add symbols from the character map", 
+        b : "Insert vector icons from a library into your document", 
+        c : "Create new text styles", 
+        d : "Insert a table of contents",
+        ans : "Insert vector icons from a library into your document" 
+    },
+    {
+        que : "What is the advantage of using a 'Text Box' from the 'Insert' tab in a Word document?",
+        a : "It allows you to place text in a specific area, independent of the main text flow", 
+        b : "It provides a space for inserting pictures only.", 
+        c : "It converts text into WordArt.", 
+        d : "It creates a hyperlink to another document.",
+        ans : "It allows you to place text in a specific area, independent of the main text flow" 
+    },
+    {
+        que : "What does the 'Drop Cap' feature in the 'Insert' tab do to your text?",
+        a : "It capitalizes every letter in a word or sentence.", 
+        b : "It converts text into a table.", 
+        c : "It enlarges the first letter of a paragraph for decorative purposes.", 
+        d : "It adds a hyperlink to the text.",
+        ans : "It enlarges the first letter of a paragraph for decorative purposes." 
+    },
+    {
+        que : "How can you use the 'Insert' tab to add a specific part of your screen as an image in your document?",
+        a : "By using 'Picture' and uploading a screenshot", 
+        b : "By using the 'Screenshot' and selecting 'Screen Clipping'", 
+        c : " By clicking 'Shapes' and drawing the clipped area", 
+        d : "By using 'Text Box' to paste the clipping",
+        ans : "By using the 'Screenshot' and selecting 'Screen Clipping'" 
+    },
+    {
+        que : "What does the 'Page Break' feature in the 'Insert' tab do?",
+        a : "It adds a horizontal line.", 
+        b : "It inserts a new blank document.", 
+        c : "It creates a link to another document.", 
+        d : "It starts a new page at the current cursor position.",
+        ans : "It starts a new page at the current cursor position." 
+    },
+    {
+        que : "What can be typically added or edited using the 'Footer' option in the 'Insert' tab?",
+        a : "Page numbers, document title, and date", 
+        b : "Images and shapes only", 
+        c : " Hyperlinks to external websites", 
+        d : "Text Boxes and WordArt",
+        ans : "Page numbers, document title, and date" 
+    },
+    {
+        que : "How does the 'Quick Parts' feature under the 'Insert' tab enhance document creation?",
+        a : "It provides tools to draw and edit shapes.", 
+        b : "It automatically adds page numbers to the document.", 
+        c : "It allows you to insert pre-designed elements like document properties, auto-text, and fields.", 
+        d : "It helps in inserting images from the internet.",
+        ans : "It allows you to insert pre-designed elements like document properties, auto-text, and fields." 
+    },
+    {
+        que : "What can you do with the 'Hyperlink' feature in the 'Insert' tab?",
+        a : "Add images from the internet.", 
+        b : "Create links to web pages, other documents, or places within the same document.", 
+        c : "Insert a new blank page in your document.", 
+        d : "Create a graphical diagram with SmartArt.",
+        ans : "Create links to web pages, other documents, or places within the same document." 
+    },
+    {
+        que : "How can you insert a preformatted Table of Contents into your document using the 'Insert' tab?",
+        a : "By using 'Quick Parts' to add TOC entries.", 
+        b : "By inserting a 'Text Box' and manually creating the TOC.", 
+        c : "By using 'Cover Page' and choosing a TOC template.", 
+        d : "By selecting 'Table of Contents' from the 'References' tab, not the 'Insert' tab.",
+        ans : "By selecting 'Table of Contents' from the 'References' tab, not the 'Insert' tab." 
+    },
+    {
+        que : "What options are available when inserting page numbers using the 'Insert' tab?",
+        a : "You can only add page numbers at the bottom of the page.", 
+        b : "You can choose the position (top, bottom, or sides) and style of the page numbers.", 
+        c : "You can insert page numbers in the middle of paragraphs.", 
+        d : "You can create hyperlinks with the page numbers.",
+        ans : "You can choose the position (top, bottom, or sides) and style of the page numbers." 
+    },
+    {
+        que : "When you insert a table in your document, what two new tabs appear?",
+        a : "Design Tab and Format Tab", 
+        b : "Table Tools Format Tab and Table Tools Layout Tab", 
+        c : "Table Tools Design Tab and Table Tools Format Tab", 
+        d : "Table Tools Design Tab and Table Tools Layout Tab",
+        ans : "Table Tools Design Tab and Table Tools Layout Tab" 
+    }
+];
+
+let display = document.querySelector(".display");  
+let qnumber = document.querySelector(".dots");
+let index = 0,
+correct = 0,
+incorrect = 0,
+correctQns = [],
+incorrectQns = [],
+total = question.length;
+
+const app = (n)=>{
+    let element = document.getElementsByClassName("mySlides");
+    index = n;
+    index<0 ? index=question.length-1 : index=index;
+    index>question.length-1 ? index=0 : index=index;
+    
+    for(i=0; i<question.length; i++){
+            element[i].style.display="none";
+        }    
+    element[index].style.display="block";
+
+    let inputEl = element[index].querySelectorAll("input[type='radio']");
+    inputEl.forEach((element)=>{
+        element.onclick=()=>{
+            let dot = document.querySelectorAll(".dot");
+            dot[index].style.backgroundColor="#00c968db";
+        }    
+    });
+};
+
+question.forEach((value, key)=>{
+    let output = `
+    <div class="mySlides fade">
+        <h2>Qns-${key+1}. ${value.que}</h2>
+        <p><input type="radio" name="mcq${key}" value="${value.a}")">
+            <span>a) ${value.a}</span>
+        </p>
+        <p><input type="radio" name="mcq${key}" value="${value.b}")">
+            <span>b) ${value.b}</span>
+        </p>
+        <p><input type="radio" name="mcq${key}" value="${value.c}")">
+            <span>c) ${value.c}</span>
+        </p>
+        <p><input type="radio" name="mcq${key}" value="${value.d}")">
+            <span>d) ${value.d}</span>
+        </p>
+    </div>
+    `;
+    let output1 = `
+    <span class="dot" onclick="currentSlide(${key})">${key+1}</span>
+    `;
+    display.insertAdjacentHTML("beforeend", output);
+    qnumber.insertAdjacentHTML("beforeend", output1);
+});
+
+// Next/previous controls
+const plusBtn = (n)=>{
+    index += n;
+    app(index);
+}
+// Slide controls
+function currentSlide(n) {
+  app(n);
+}
+function result(){
+    document.querySelector(".container").style.display="block";
+    correct = 0,
+    incorrect = 0;
+    for(i in question){
+        i = Number.parseInt(i);
+        const data = question[i];
+        const ans = getAnswer(i);
+        if (ans === data.ans) {
+            correct++;
+            correctQns.unshift(i+1);
+        } else {
+            incorrect++;
+            incorrectQns.unshift(i+1);
+        }
+    }
+    document.getElementsByClassName("container")[0].innerHTML = `
+       <table border="1" cellspacing="0">
+            <tr>
+                <th>total marks</th>
+                <td>${total}</td>
+            </tr>
+            <tr>
+                <th>score</th>
+                <td>${correct} / ${total}</td>
+            </tr>
+            <tr>
+                <th>correct</th>
+                <td>${correct}</td>
+            </tr>
+            <tr>
+                <th>incorrect</th>
+                <td>${incorrect}</td>
+            </tr>
+            <tr>
+                <th>correct qns.</th>
+                <td>${correctQns}</td>
+            </tr>
+            <tr>
+                <th>incorrect qns.</th>
+                <td>${incorrectQns}</td>
+            </tr>
+        </table>
+    `;
+}
+const getAnswer = (i)=>{
+    let element = document.getElementsByClassName("mySlides");
+    let inputEl = element[i].querySelectorAll('input[type="radio"]');
+    let ans;
+    inputEl.forEach((inpEl) => {
+        if(inpEl.checked){
+            ans = inpEl.value;
+        }
+    });
+    return ans;
+}
+let watch = document.querySelector(".timeOut h3 span"),
+    startBtn = document.getElementById("startBtn"),
+    min = 59,
+    sec = 60;
+function start(go){
+   
+    if (go) {
+        startBtn.disabled = true;
+        startBtn.style.display="none";
+        display.style.display="block";
+    }
+    setTimeout(function(){
+        sec = parseInt(sec);
+        min = parseInt(min);
+        sec--;
+        if (sec == 0) {
+            min = min - 1;
+            sec = 60;
+        }
+        if(min<5){
+            watch.style.color="red";
+            watch.classList.add("fade");
+        }
+        if(min == 0){
+            result();
+        }
+        //condition single digit before 0
+        if (sec < 10) {
+            sec = '0' + sec;
+        }
+        if (min < 10) {
+            min = '0' + min;
+        }
+        watch.innerHTML = min + ' : ' + sec;
+        // calling start() function recursivly to continue stopwatch
+        start();
+    }, 1000); // setTimeout delay time 1 seconds
+}
+
+app(index);
+
+</script>
+    
+</body>
+</html>

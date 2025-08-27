@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+nav .navLinks a{
+  position: relative;
+}
+nav .navLinks a::before{
+  content: "";
+  width: 0;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #421156;
+  position: absolute;
+  top: 100%;
+  transition: ease-in-out .4s;
+}
+nav .navLinks a:hover::before{
+  width: 50%;
+}
+
+
+/* From Uiverse.io by alexruix */ 
+/* The switch - the box around the slider */
+.darkModeSwitch {
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.darkModeSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #1c1c1cbd;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+  border: #9b59b6;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 12%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: #421156;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}

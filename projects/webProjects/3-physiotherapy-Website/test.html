@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test</title>
+</head>
+<body>
+
+	<input type="text" id="num" onkeyup="val(this)" min="">
+	<h1 id="h1"></h1>
+
+<script type="text/javascript">
+
+let inp = document.getElementById('num');
+let out = document.getElementById('h1');
+
+
+function val(element){
+	if(isNaN(inp.value)){
+		//isNaN not a number
+		out.innerText="please enter number";
+	}else{
+		out.innerText="";
+		if(inp.value.length > 10){
+			inp.focus();
+			out.innerText="Please enter valid number";
+		}else if(inp.value.length < 10){
+			out.innerText="please enter 10 digits";
+		}else{
+			out.innerText="perfect";
+		}
+	}
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="heading">Language Translator</h1>
+    <div class="container">
+        <div class="translator_property">
+            <ul class="nuv_item">
+                <li>
+                    <select></select>
+                </li>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <li>
+                    <select></select>
+                </li>               
+            </ul>
+            <div class="write_box">
+                <div class="property_from">
+                    <textarea class="fromText" placeholder="write down"></textarea>
+                    <div class="icons">
+                        <i class="fa fa-volume-high from"></i>
+                        <div class="code_length">0/5,000</div>
+                    </div>
+                </div>
+                <div class="property_trans">
+                    <textarea class="toTranslate" disabled></textarea>
+                    <div class="icons">
+                        <i class="fa fa-volume-high to"></i>
+                        <i class="fa fa-clone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

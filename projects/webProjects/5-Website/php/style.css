@@ -1,0 +1,29 @@
+.link{
+  padding:10px 20px;
+  color: #000;
+  font-size: 12px;
+  background: #33FF58;
+ transition: background 0.3s;
+    text-decoration: none;
+    position: absolute;
+    top: 55%;
+    left: 40%;
+
+}
+
+.link:hover{
+background: #fff; 
+border: 1px solid #33ff58;
+}
+.link2{
+  background: #fff;
+  border: 1px solid #33ff58;
+   transition: background 0.3s;
+      padding:10px 20px;
+  color: #000;
+  font-size: 12px;
+  text-decoration: none;
+  position: absolute;
+  top:55% ;
+  left: 55%;
+}
