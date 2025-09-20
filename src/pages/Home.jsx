@@ -1,40 +1,27 @@
 import React from "react";
 import skills from "../skills";
-import { Layers, Pencil, CircleCheck, PenTool, CodeXml, BookCheck, ChartColumnStacked, MapPinned, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Layers, Pencil, CircleCheck, PenTool, CodeXml, BookCheck, ChartColumnStacked, MapPinned, Github, Linkedin, Twitter, Mail, SliceIcon } from "lucide-react";
 import codeGuyImg from "../assets/img/coderGuy.gif"
-import { Card } from "../components/index";
-import { Link } from "react-router-dom";
+import { Card, Carousel, ProjectCard, ProjectInsightModal, ProjectSlider } from "../components/index";
+import { carouselSlides } from "../../projects/projects";
+import projects from "../../projects/projects";
 
 function Home() {
     React.useEffect(() => {
         document.title = "Home";
     }, []);
-    
+
+    const [InsightModal, getProjectInsights] = ProjectInsightModal();
+    const topProjects = projects.filter(project => project.topProjct === "top");
+
     return (
         <div className="md:w-full">
-            <section className="min-h-screen flex items-center justify-center text-white p-6">
-                <div className="text-center max-w-4xl mx-auto">
-                    <img
-                        src="https://placehold.co/150x150/421156/FFFFFF?text=SP"
-                        alt="Developer Profile"
-                        className="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-[#9b59b6] shadow-lg"
-                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/150x150/CF3545/FFFFFF?text=JD"; }}
-                    />
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in-down">
-                        Hi, I'm <span className="text-theme">Shushant Pratap</span>
-                    </h1>
-                    <p className="text-xl md:text-2xl mb-8 leading-relaxed animate-fade-in-up">
-                        A passionate Web Developer crafting engaging and user-friendly digital experiences.
-                        I specialize in building robust and scalable web applications.
-                    </p>
-                    <button
-                        className="bg-[#9b59b6] hover:bg-[#421156] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
-                    >
-                        <Link to="/projects/all">
-                            View My Work
-                        </Link>
-                    </button>
-                </div>
+            <InsightModal />
+            <section className="mb-10">
+                <Carousel
+                    slides={carouselSlides}
+                    autoSlide
+                />
             </section>
 
             {/* About me */}
@@ -208,11 +195,46 @@ function Home() {
                 />
             </section>
 
+            {/* Education area */}
+            <section className="max-w-7xl mx-auto p-3">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 dark:text-gray-100">Education</h2>
+                <Card
+                    className="p-4 mb-6"
+                    title="Diploma in Web Development"
+                    titleClass="text-xl text-theme"
+                    children={
+                        <div>
+                            <p className="dark:text-[#fff] text-gray-600">
+                                Arth Institute, Delhi
+                                <br/>
+                                2022 - 2024
+                            </p>
+                                <ul className="list-disc list-inside mt-2 dark:text-[#ccc]">
+                                <li>Learned HTML, CSS, JavaScript</li>
+                                <li>PHP, JQuery, AJAX and MySql</li>
+                                <li>Developed portfolio websites & full-stack projects</li>
+                                <li>Learned UI/UX design principles</li>
+                            </ul>
+                        </div>
+                    }
+                />
+            </section>
+
             {/* Top projects */}
             <section className="max-w-7xl mx-auto min-h-screen p-3">
-                <h2 className="text-4xl md:text-5xl font-bold my-6 dark:text-gray-100">
-                    Projects
-                </h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 dark:text-gray-100">Projects</h2>
+                <ProjectSlider
+                    autoSlide
+                    slides={topProjects.map((project) => (
+                        <div key={project.image} className="w-[360px] p-1">
+                            <ProjectCard
+                                className="h-full hover:scale-none"
+                                {...project}
+                                getProjectInsights={getProjectInsights}
+                            />
+                        </div>
+                    ))}
+                />
             </section>
 
             {/* Contact */}
@@ -238,56 +260,56 @@ function Home() {
                         paragraph="You can also find me on:"
                         paragraphClass="text-2xl mt-4"
                         children={
-                        <>
-                            <div className="py-5 space-x-6">
-                                <p className="flex my-2">
-                                    <MapPinned size={30} strokeWidth={2} className="me-2" />
-                                    India (New Delhi)
-                                </p>
-                                <p className="flex my-2">
-                                    <Mail size={30} strokeWidth={2} className="me-2" />
-                                    sunnypratap912@gmail.com
-                                </p>
-                            </div>
+                            <>
+                                <div className="py-5 space-x-6">
+                                    <p className="flex my-2">
+                                        <MapPinned size={30} strokeWidth={2} className="me-2" />
+                                        India (New Delhi)
+                                    </p>
+                                    <p className="flex my-2">
+                                        <Mail size={30} strokeWidth={2} className="me-2" />
+                                        sunnypratap912@gmail.com
+                                    </p>
+                                </div>
 
-                            <div className="flex justify-start space-x-6">
-                                <a
-                                    href="https://github.com/ShushantPratap/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-[#9b59b6] transition-colors duration-300"
-                                    title="GitHub Profile"
-                                >
-                                    <i className="fa fa-github text-4xl!" />
-                                </a>
-                                <a
-                                    href="https://in.pinterest.com/shushantpratap/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-[#9b59b6] transition-colors duration-300"
-                                    title="Pinterest Profile"
-                                >
-                                    <i className="fa fa-pinterest text-4xl!" />
-                                </a>
-                                <a href="https://www.instagram.com/web_ui_/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-[#9b59b6] transition-colors duration-300"
-                                    title="Instagram Profile"
-                                >
-                                    <i className="fa fa-instagram text-4xl!" />
-                                </a>
-                                <a
-                                    href="https://www.linkedin.com/in/shushant-pratap-981b1b2b5/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-[#9b59b6] transition-colors duration-300"
-                                    title="LinkedIn Profile"
-                                >
-                                    <i className="fa fa-linkedin-square text-4xl!" />
-                                </a>
-                            </div>
-                        </>
+                                <div className="flex justify-start space-x-6">
+                                    <a
+                                        href="https://github.com/ShushantPratap/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-[#9b59b6] transition-colors duration-300"
+                                        title="GitHub Profile"
+                                    >
+                                        <i className="fa fa-github text-4xl!" />
+                                    </a>
+                                    <a
+                                        href="https://in.pinterest.com/shushantpratap/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-[#9b59b6] transition-colors duration-300"
+                                        title="Pinterest Profile"
+                                    >
+                                        <i className="fa fa-pinterest text-4xl!" />
+                                    </a>
+                                    <a href="https://www.instagram.com/web_ui_/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-[#9b59b6] transition-colors duration-300"
+                                        title="Instagram Profile"
+                                    >
+                                        <i className="fa fa-instagram text-4xl!" />
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/shushant-pratap-981b1b2b5/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-[#9b59b6] transition-colors duration-300"
+                                        title="LinkedIn Profile"
+                                    >
+                                        <i className="fa fa-linkedin-square text-4xl!" />
+                                    </a>
+                                </div>
+                            </>
                         }
                     />
                     <Card

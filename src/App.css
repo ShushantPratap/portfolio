@@ -1,74 +1,113 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-nav .navLinks a{
-  position: relative;
+nav .navLinks a {
+    position: relative;
 }
-nav .navLinks a::before{
-  content: "";
-  width: 0;
-  height: 4px;
-  border-radius: 10px;
-  background-color: #421156;
-  position: absolute;
-  top: 100%;
-  transition: ease-in-out .4s;
+
+nav .navLinks a::before {
+    content: "";
+    width: 0;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #421156;
+    position: absolute;
+    top: 100%;
+    transition: ease-in-out .4s;
 }
-nav .navLinks a:hover::before{
-  width: 50%;
+
+nav .navLinks a:hover::before {
+    width: 50%;
 }
 
 
-/* From Uiverse.io by alexruix */ 
+/* From Uiverse.io by alexruix */
 /* The switch - the box around the slider */
 .darkModeSwitch {
-  font-size: 14px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
 }
 
 /* Hide default HTML checkbox */
 .darkModeSwitch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* The slider */
+/* dark mode slider */
 .slider {
-  --background: #1c1c1cbd;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: .5s;
-  border-radius: 30px;
-  border: #9b59b6;
+    --background: #1c1c1cbd;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+    border: #9b59b6;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 12%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
-  background: var(--background);
-  transition: .5s;
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 12%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
 }
 
-input:checked + .slider {
-  background-color: #421156;
+input:checked+.slider {
+    background-color: #421156;
 }
 
-input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #fff000;
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+
+/* carousel */
+
+/* animation text in first item */
+.carousel .list .item:nth-child(1) .sliderImage,
+.carousel .list .item:nth-child(1) .sliderContent .title,
+.carousel .list .item:nth-child(1) .sliderContent .des,
+.carousel .list .item:nth-child(1) .sliderContent .projectTech,
+.carousel .list .item:nth-child(1) .sliderBtn {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .3s 1s linear 1 forwards;
+}
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .sliderImage{
+    animation-delay: 0.8s;
+}
+.carousel .list .item:nth-child(1) .sliderBtn {
+    animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .sliderContent .title {
+    animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(1) .sliderContent .des {
+    animation-delay: 1.6s;
+}
+.carousel .list .item:nth-child(1) .sliderContent .projectTech {
+    animation-delay: 1.8s;
 }

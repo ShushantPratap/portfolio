@@ -1,40 +1,41 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     min-width: 1250px;
     background: #f6f6f6;
 }
 
 /***NAVBAR***/
 
-.navbar{ 
+.navbar {
     width: 100%;
     height: 50px;
     background: #353839;
     position: fixed;
     top: 0px;
     z-index: 2;
- }
-
-.logo{
-    width: 30%;
-    overflow: hidden; 
- }
-
-.navbar .logo img{
-    width: 60px;
-    transform: translate(15px,-7px);
 }
 
-.navbar .logo a{
+.logo {
+    width: 30%;
+    overflow: hidden;
+}
+
+.navbar .logo img {
+    width: 60px;
+    transform: translate(15px, -7px);
+}
+
+.navbar .logo a {
     text-decoration: none;
 }
-.navbar .logo h1{
-    transform: translate(78px,-46px);
+
+.navbar .logo h1 {
+    transform: translate(78px, -46px);
     color: #ffd43b;
     text-transform: capitalize;
     font-family: arial;
@@ -42,15 +43,16 @@ body{
     font-weight: 900;
 }
 
-.links{ 
+.links {
     width: 70%;
-    height: 50px; 
+    height: 50px;
     float: right;
-    transform: translate(0,-175%);
-    margin-right:15px ;
- }
+    transform: translate(0, -175%);
+    margin-right: 15px;
+}
 
-.links a{float: right;
+.links a {
+    float: right;
     text-decoration: none;
     display: inline;
     font-size: 15px;
@@ -64,33 +66,35 @@ body{
     transition: 0.3s;
 }
 
-.links a:hover{
+.links a:hover {
     text-decoration: underline;
     color: tomato;
 }
 
-.links a i{ padding: 5px;
+.links a i {
+    padding: 5px;
     font-size: 20px;
     color: #ffd43b;
     transition: 0.3s;
- }
+}
 
-.links a i:hover{
+.links a i:hover {
     transform: scale(1.2);
     color: tomato;
- }
+}
 
-.links img{ width: 40px;
+.links img {
+    width: 40px;
     position: relative;
     top: 1px;
     left: -5px;
     border-radius: 350px;
     transition: 0.3s;
- }
+}
 
- .links img:hover{
+.links img:hover {
     transform: scale(1.1);
- }
+}
 
 /***NAVBAR END***/
 
@@ -98,23 +102,23 @@ body{
 
 /***FOOTER**/
 
-.footer{ 
-	width: 100%;
-	height: 380px;
-	background: #353839;
+.footer {
+    width: 100%;
+    height: 380px;
+    background: #353839;
     transform: translate(0, 10px);
     overflow: hidden;
     margin-top: -10px;
- }
+}
 
- .footer-top{
- 	width: 100%;
- 	height: 20px;
- 	background: #616863;
+.footer-top {
+    width: 100%;
+    height: 20px;
+    background: #616863;
     text-align: center;
- }
+}
 
-.footer-top a{
+.footer-top a {
     text-align: center;
     color: white;
     font-family: arial;
@@ -125,12 +129,12 @@ body{
     letter-spacing: 2px;
 }
 
- .footer .contact{
-    transform: translate(0,20px);
+.footer .contact {
+    transform: translate(0, 20px);
     padding: 0 0 0 50px;
 }
 
-.footer .contact a{
+.footer .contact a {
     color: #ffd43b;
     text-decoration: none;
     text-transform: capitalize;
@@ -139,7 +143,7 @@ body{
     font-weight: 600;
 }
 
-.footer .contact .us{
+.footer .contact .us {
     color: #ffd43b;
     font-size: 20px;
     font-weight: 600;
@@ -148,35 +152,35 @@ body{
 
 }
 
-.footer .contact .num{
+.footer .contact .num {
     color: #fff;
     margin-top: 15px;
 }
 
-.footer .contact .mail{
+.footer .contact .mail {
     font-weight: 800;
     font-size: 15px;
 }
 
-.footer .contact i{
+.footer .contact i {
     font-size: 22px;
-    transform: translate(0,-9px);
+    transform: translate(0, -9px);
 }
 
-.footer .contact h2{
+.footer .contact h2 {
     color: white;
     font-size: 14px;
     font-family: Arial;
-    transform: translate(-40px,110px);
+    transform: translate(-40px, 110px);
 }
 
-.footer .follow{
+.footer .follow {
     width: 250px;
-    transform: translate(15px,-160px);
+    transform: translate(15px, -160px);
 }
 
-.footer .follow h1{
-    transform: translate(0,-30px);
+.footer .follow h1 {
+    transform: translate(0, -30px);
     color: #ffd43b;
     font-size: 20px;
     font-family: arial;
@@ -184,51 +188,51 @@ body{
     text-transform: capitalize;
 }
 
-.footer i{
+.footer i {
     font-size: 30px;
     padding: 5px;
     float: left;
     margin-left: 20px;
 }
 
- .footer .instagram{
- 	color: rgb(241, 40, 40);
+.footer .instagram {
+    color: rgb(241, 40, 40);
 }
 
-.footer .facebook{
+.footer .facebook {
     color: #4570E6;
 }
 
-.footer .twitter{
+.footer .twitter {
     color: #7ED4E6;
 }
 
-.footer .yt{
+.footer .yt {
     color: red;
 }
 
-.footer .foot-logo img{
+.footer .foot-logo img {
     width: 60px;
-    transform: translate(-50px,175px);
+    transform: translate(-50px, 175px);
 }
 
-.footer .foot-logo h1{
+.footer .foot-logo h1 {
     color: #ffd43b;
     text-transform: capitalize;
     font-family: arial;
     font-size: 20px;
     font-weight: 900;
-    transform: translate(50px,136px);
+    transform: translate(50px, 136px);
 }
 
 .footer .body-type {
     float: right;
     width: 200px;
-    transform: translate(-10px,-345px);
+    transform: translate(-10px, -345px);
 
 }
 
-.footer .body-type h1{
+.footer .body-type h1 {
     color: #ffd43b;
     font-family: Arial;
     text-transform: capitalize;
@@ -237,7 +241,7 @@ body{
 
 }
 
-.footer .body-type h1[class]{
+.footer .body-type h1[class] {
     color: #ffd43b;
     font-family: Arial;
     text-transform: capitalize;
@@ -246,7 +250,7 @@ body{
 
 }
 
-.footer .body-type a{
+.footer .body-type a {
     font-size: 15px;
     font-weight: 500;
     color: white;
@@ -256,14 +260,14 @@ body{
     display: block;
 }
 
-.footer .body-type input{
+.footer .body-type input {
     width: 200px;
     height: 100px;
     margin-top: 0px;
 }
 
 
- .footer .body-type input[type="submit"]{ 
+.footer .body-type input[type="submit"] {
     width: 70px;
     height: 20px;
     border-radius: 50px;
@@ -276,7 +280,7 @@ body{
     transition: 00.3s;
 }
 
-.footer .body-type input[type="submit"]:hover{
+.footer .body-type input[type="submit"]:hover {
     transform: scale(1.2);
     background-color: orangered;
 }
@@ -288,12 +292,12 @@ body{
 
 /***1 HOME PAGE***/
 
-.content{
+.content {
     width: 100%;
     margin-top: 50px;
 }
 
-.content .head{
+.content .head {
     width: 100%;
     height: 350px;
     border-bottom-left-radius: 30%;
@@ -302,63 +306,63 @@ body{
     overflow: hidden;
 }
 
-.content .search{
-    transform: translate(-50px,-350px);
+.content .search {
+    transform: translate(-50px, -350px);
     text-align: center;
 }
 
-.content .background{
+.content .background {
     width: 2000px;
-    transform: translate(-9%,0);
+    transform: translate(-9%, 0);
 }
 
-.content .background img{
+.content .background img {
     width: 650px;
     float: left;
-    transform: translate(-15%,00px);
+    transform: translate(-15%, 00px);
 }
 
-.content .background img[id]{
-    transform: translate(5%,0);
+.content .background img[id] {
+    transform: translate(5%, 0);
     z-index: 2;
 }
 
-.content .background img[class]{
-    transform: translate(-30%,0);
+.content .background img[class] {
+    transform: translate(-30%, 0);
     z-index: -1;
 }
 
-.content .head input{
+.content .head input {
     width: 400px;
     height: 40px;
     font-weight: 600;
     border-radius: 50px;
-    transform: translate(50px,70px);
+    transform: translate(50px, 70px);
     padding: 10px;
     border: none;
 }
 
-.content .head i{
+.content .head i {
     font-size: 25px;
     font-weight: 900;
-    transform: translate(10px,75px);
+    transform: translate(10px, 75px);
     color: gray;
 }
 
-.content .head h1{
+.content .head h1 {
     color: orange;
-    transform: translate(2.4%,90px);
+    transform: translate(2.4%, 90px);
     font-family: arial black;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
-.content .head h1 span{
+.content .head h1 span {
     color: orangered;
 }
 
-.content .head h2{
+.content .head h2 {
     color: yellow;
-    transform: translate(2.5%,90px);
+    transform: translate(2.5%, 90px);
     font-family: arial black;
     text-transform: uppercase;
     animation-name: fit;
@@ -367,31 +371,38 @@ body{
     animation-iteration-count: infinite;
 
 }
-@keyframes fit{
-    0%{  }
-    50%{ color: #e599f7;}
-    100%{color: #63e6be; }
-    
+
+@keyframes fit {
+    0% {}
+
+    50% {
+        color: #e599f7;
+    }
+
+    100% {
+        color: #63e6be;
+    }
+
 }
 
-.content .search h3{
+.content .search h3 {
     font-size: 25px;
     color: white;
     font-family: arial;
     text-transform: capitalize;
     font-weight: 600;
-    transform: translate(2%,110px);
+    transform: translate(2%, 110px);
 
 
 }
 
-.content .search button{
+.content .search button {
     width: 150px;
     height: 50px;
     margin: 7px;
     position: relative;
     top: 110px;
-    left:2% ;
+    left: 2%;
     border: none;
     border-radius: 50px;
     background: rgb(255, 236, 26);
@@ -402,17 +413,17 @@ body{
 
 }
 
-.content .search button:hover{
+.content .search button:hover {
     background: orange;
     transform: scale(1.2);
 }
 
-.content #exe{
+.content #exe {
     width: 100%;
     height: auto;
 }
 
-.content #exe h1{
+.content #exe h1 {
     font-size: 30px;
     width: 100%;
     background: rgb(70, 55, 27);
@@ -422,10 +433,10 @@ body{
     padding: 0 0 0 30px;
     margin: 40px 0 10px 0;
     text-align: center;
-    
+
 }
 
-.content #exe button{
+.content #exe button {
     width: 30%;
     height: 240px;
     background: transparent;
@@ -433,36 +444,36 @@ body{
     margin: 7px;
 }
 
-.content .exe{
+.content .exe {
     float: left;
     width: 30%;
     height: 240px;
     padding: 15px;
     margin: 1px 10% 2px 10%;
-    background:transparent;
+    background: transparent;
     transition: 0.3s;
     position: relative;
     top: -60px;
 }
 
-.content .exe:hover{
+.content .exe:hover {
     transform: scale(1.05);
 }
 
-.content .exe img{
+.content .exe img {
     width: 390%;
     border-radius: 30px;
     transition: 0.3s;
 }
 
-.content .exe img:hover{
-    
-    box-shadow: 10px 10px 50px gray,10px 5px 50px black;
+.content .exe img:hover {
+
+    box-shadow: 10px 10px 50px gray, 10px 5px 50px black;
 }
 
 
-.content .exe h2{
-    transform: translate(40%,150%);
+.content .exe h2 {
+    transform: translate(40%, 150%);
     color: yellow;
     text-transform: uppercase;
     font-family: arial;
@@ -471,7 +482,7 @@ body{
 
 }
 
-.content #body{
+.content #body {
     width: 100%;
     height: 100%;
     background: rgb(70, 55, 27);
@@ -479,7 +490,7 @@ body{
     padding: 10px;
 }
 
-.content #body .body{
+.content #body .body {
     transition: 0.3s;
     padding: 10px;
     position: relative;
@@ -487,51 +498,53 @@ body{
     margin: -30px -60px;
 }
 
-.content #body .body:hover{
+.content #body .body:hover {
     transform: scale(1.05);
 }
 
-.content #body h1{
+.content #body h1 {
     color: black;
-    font-family: arial black;;
+    font-family: arial black;
+    ;
     text-transform: uppercase;
     font-size: 30px;
-    color:  rgb(238, 238, 238);
+    color: rgb(238, 238, 238);
 }
 
-.content #body img{
+.content #body img {
     width: 500px;
     border-radius: 30px;
-    transform: translate(110px,0);
+    transform: translate(110px, 0);
 }
 
-.content #body h2{
+.content #body h2 {
     width: 32%;
-    transform: translate(640px,-270px);
+    transform: translate(640px, -270px);
     color: rgb(249, 249, 249);
     text-transform: uppercase;
     font-family: arial black;
 }
 
-.content #body .p{
+.content #body .p {
     width: 400px;
     float: right;
-    transform: translate(-100px,-300px);
-    color:  rgb(238, 238, 238);
+    transform: translate(-100px, -300px);
+    color: rgb(238, 238, 238);
     font-family: arial;
 }
 
-.content #body a{
+.content #body a {
     margin: 10px;
     text-decoration: none;
 }
+
 /***1 HOME PAGE END ***/
 
 
 
 /***2 TYPE PAGE***/
 
-#type{
+#type {
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -539,15 +552,15 @@ body{
 }
 
 
-#type .top{
+#type .top {
     width: auto;
     height: 180px;
     background: #1a1a1b;
-    padding: 80px; 
-    letter-spacing: 3px; 
+    padding: 80px;
+    letter-spacing: 3px;
 }
 
-#type .top h1{
+#type .top h1 {
     font-size: 30px;
     font-family: Arial Narrow;
     color: white;
@@ -556,7 +569,7 @@ body{
 }
 
 
-#type .top h3{
+#type .top h3 {
     font-size: 20px;
     font-family: arial narrow;
     color: #a0a0a0;
@@ -564,7 +577,7 @@ body{
     margin: 5px 0 0 32px;
 }
 
-#type .top input{
+#type .top input {
     float: right;
     width: 300px;
     height: 40px;
@@ -579,7 +592,7 @@ body{
     left: -50px;
 }
 
-#type .top i{
+#type .top i {
     float: right;
     font-size: 20px;
     color: gray;
@@ -589,7 +602,7 @@ body{
 }
 
 
-#type .body{
+#type .body {
     transition: 0.3s;
     padding: 10px;
     position: relative;
@@ -597,8 +610,8 @@ body{
     margin: -25px -50px;
 }
 
-#type .body:hover{
-    box-shadow: 10px 10px 100px gray,10px 10px 100px black;
+#type .body:hover {
+    box-shadow: 10px 10px 100px gray, 10px 10px 100px black;
     width: 99%;
     margin: 0 0 0 0.5%;
     background-color: #ffd43b;
@@ -607,30 +620,31 @@ body{
     transform: scale(1);
 }
 
-#type img{
+#type img {
     width: 500px;
     border-radius: 30px;
-    transform: translate(50px,0);
+    transform: translate(50px, 0);
     margin-top: 10px;
 }
 
-#type h2{
+#type h2 {
     width: 32%;
-    transform: translate(640px,-270px);
+    transform: translate(640px, -270px);
     color: #363949;
     text-transform: uppercase;
-    font-family: arial black;;
+    font-family: arial black;
+    ;
 }
 
-#type .p{
+#type .p {
     width: 400px;
     float: right;
-    transform: translate(-100px,-300px);
+    transform: translate(-100px, -300px);
     color: black;
     font-family: arial;
 }
 
-#type a{
+#type a {
     margin: 10px;
     text-decoration: none;
 }
@@ -639,22 +653,22 @@ body{
 
 /***3 LOCATION PAGE***/
 
-#location{
+#location {
     width: 100%;
     margin-top: 60px;
 
 }
 
 
-#location .top{
+#location .top {
     width: auto;
     height: 180px;
     background: #1a1a1b;
-    padding: 80px; 
-    letter-spacing: 3px; 
+    padding: 80px;
+    letter-spacing: 3px;
 }
 
-#location .top h1{
+#location .top h1 {
     font-size: 30px;
     font-family: Arial Narrow;
     color: white;
@@ -663,7 +677,7 @@ body{
 }
 
 
-#location .top h3{
+#location .top h3 {
     font-size: 20px;
     font-family: arial narrow;
     color: #a0a0a0;
@@ -671,7 +685,7 @@ body{
     margin: 5px 0 0 32px;
 }
 
-#location .top input{
+#location .top input {
     float: right;
     width: 300px;
     height: 40px;
@@ -686,7 +700,7 @@ body{
     left: -50px;
 }
 
-#location .top i{
+#location .top i {
     float: right;
     font-size: 20px;
     color: gray;
@@ -695,37 +709,37 @@ body{
 
 }
 
-#location p{
+#location p {
     padding: 50px 160px 50px 160px;
     text-transform: capitalize;
     font-size: 18px;
     color: #252525;
 }
 
-#location .map{
+#location .map {
     width: 100%;
     height: auto;
     margin-top: 1.6%;
     text-align: center;
 }
 
-#location .map iframe{
+#location .map iframe {
     width: 80%;
     border-radius: 10px;
 }
 
-#location .map .p{
+#location .map .p {
     width: 80%;
     height: 200px;
     position: relative;
     top: 20px;
-    margin: 0 10% 0 10% ;
+    margin: 0 10% 0 10%;
     margin-bottom: 200px;
     text-align: center;
-    
+
 }
 
-#location .map .p h2{
+#location .map .p h2 {
     width: 350px;
     height: 30px;
     position: relative;
@@ -740,7 +754,7 @@ body{
 }
 
 
-#location .map .p input{
+#location .map .p input {
     width: 300px;
     height: 30px;
     padding: 10px;
@@ -749,8 +763,9 @@ body{
     position: relative;
     left: 0%;
     top: 30px;
-} 
-#location .map .p i{
+}
+
+#location .map .p i {
     position: relative;
     left: -35px;
     top: 34px;
@@ -759,7 +774,7 @@ body{
 }
 
 
-#location .map .p h3{
+#location .map .p h3 {
     position: relative;
     left: -250px;
     top: 50px;
@@ -767,7 +782,7 @@ body{
     padding: 0 550px 0 350px;
 }
 
-#location .map .p button{
+#location .map .p button {
     width: 150px;
     height: 30px;
     background-color: tomato;
@@ -781,18 +796,19 @@ body{
     top: 90px;
     transition: 0.3s;
 }
-#location .map .p button:hover{
+
+#location .map .p button:hover {
     background-color: orangered;
 }
 
-#location .map .p i[class="fa-solid fa-phone"]{
+#location .map .p i[class="fa-solid fa-phone"] {
     position: relative;
     left: 0px;
     top: 0;
     color: #1a1a1b;
 }
 
-#location .map .p p{
+#location .map .p p {
     margin-top: 70px;
 }
 
@@ -802,12 +818,12 @@ body{
 
 /***4 ABOUT US TOP***/
 
-#about{
+#about {
     width: 100%;
     margin-top: 50px;
 }
 
-#about .about{
+#about .about {
     width: 100%;
     height: 350px;
     background-color: #c8c8c8;
@@ -816,7 +832,7 @@ body{
     border-bottom-right-radius: 100px;
 }
 
-#about .about h1{
+#about .about h1 {
     position: relative;
     top: 80px;
     font-family: arial narrow;
@@ -827,7 +843,7 @@ body{
     color: #242424;
 }
 
-#about .about h2{
+#about .about h2 {
     position: relative;
     top: 150px;
     font-family: arial narrow;
@@ -838,12 +854,12 @@ body{
     color: #242424;
 }
 
-#about .follow{
+#about .follow {
     position: relative;
     top: 200px;
 }
 
-#about .follow i{
+#about .follow i {
     font-size: 20px;
     color: #232323;
     padding: 5px;
@@ -851,7 +867,7 @@ body{
     margin: 15px;
 }
 
-#about a{
+#about a {
     text-decoration: none;
 }
 
@@ -859,7 +875,7 @@ body{
 
 
 
-#about .box{
+#about .box {
     width: 30%;
     height: 100%;
     float: left;
@@ -870,14 +886,14 @@ body{
     box-shadow: 1px 1px 20px gray, 1px 1px 20px black;
 }
 
-#about .box img{
+#about .box img {
     width: 100%;
     border: 3px solid black;
     margin: 50px 0 20px 0;
     box-shadow: 15px 10px 50px #c6edf5;
 }
 
-#about .box h3{
+#about .box h3 {
     font-family: arial narrow;
     text-transform: capitalize;
     letter-spacing: 1px;
@@ -888,7 +904,7 @@ body{
 
 }
 
-#about .box p{
+#about .box p {
     font-family: arial;
     font-size: 18px;
     font-weight: 200;
@@ -897,7 +913,7 @@ body{
 
 }
 
-#about h1{
+#about h1 {
     width: 100%;
     text-align: center;
     font-size: 25px;
@@ -907,7 +923,7 @@ body{
     font-weight: 200;
 }
 
-#about .exe{
+#about .exe {
     width: 30%;
     height: 100%;
     float: left;
@@ -915,7 +931,7 @@ body{
     margin: 50px 1.6% 50px 1.6%;
 }
 
-#about .exe ul{
+#about .exe ul {
     font-size: 20px;
     font-family: arial;
     text-transform: capitalize;
@@ -923,17 +939,17 @@ body{
     line-height: 25px;
 }
 
-#about .exe li{
+#about .exe li {
     list-style: none;
     font-size: 17px;
 }
 
-#about .exe a{
+#about .exe a {
     text-decoration: none;
     color: #242424;
 }
 
-#about .women{
+#about .women {
     width: 50%;
     height: 100%;
     position: relative;
@@ -941,7 +957,7 @@ body{
     margin: 50px 0;
 }
 
-#about .women h1{
+#about .women h1 {
     font-size: 20px;
     text-align: left;
     font-family: arial;
@@ -950,7 +966,8 @@ body{
     line-height: 30px;
     margin-bottom: 10px;
 }
-#about .women a{
+
+#about .women a {
     text-decoration: none;
     color: #242424;
     font-size: 20px;
@@ -958,7 +975,7 @@ body{
 }
 
 
-#about .type{
+#about .type {
     width: 50%;
     height: 100%;
     position: relative;
@@ -966,7 +983,7 @@ body{
     margin-bottom: 50px;
 }
 
-#about .type ul{
+#about .type ul {
     font-size: 20px;
     font-family: arial;
     text-transform: capitalize;
@@ -974,12 +991,12 @@ body{
     line-height: 25px;
 }
 
-#about .type li{
+#about .type li {
     list-style: none;
     font-size: 17px;
 }
 
-#about .type a{
+#about .type a {
     text-decoration: none;
     color: #242424;
 }
@@ -990,19 +1007,19 @@ body{
 
 /***5 LOGIN PAGE***/
 
-#login{
+#login {
     width: 500px;
     height: 500px;
     margin-top: 100px;
     background-color: rgb(89, 89, 89);
 }
 
-#login .logo{
+#login .logo {
     width: 100%;
 
 }
 
-#login .logo i{ 
+#login .logo i {
     font-size: 30px;
     position: relative;
     left: 380px;
@@ -1012,13 +1029,13 @@ body{
 
 }
 
-#login .logo img{
+#login .logo img {
     width: 60px;
     position: relative;
     left: -100px;
 }
 
-#login .logo h1{
+#login .logo h1 {
     position: relative;
     left: 25px;
     top: -50px;
@@ -1028,13 +1045,13 @@ body{
     color: #ffd43b;
 }
 
-#login h1{
+#login h1 {
     color: white;
     font-family: arial;
     font-size: 25px;
 }
 
-#login input{
+#login input {
     width: 350px;
     height: 30px;
     border: none;
@@ -1043,13 +1060,13 @@ body{
     padding: 10px;
 }
 
-#login a{
+#login a {
     position: relative;
     left: -120px;
     color: rgb(227, 227, 227);
 }
 
-#login button{
+#login button {
     width: 150px;
     height: 30px;
     border: none;
@@ -1060,7 +1077,7 @@ body{
     font-size: 18px;
 }
 
-#login .google{
+#login .google {
     width: 350px;
     height: 35px;
     padding: 10px;
@@ -1071,13 +1088,13 @@ body{
     top: 30px;
 }
 
-#login .google i{
+#login .google i {
     margin-right: 10px;
     color: rgb(255, 48, 48);
- 
+
 }
 
-#login .facebook{
+#login .facebook {
     width: 350px;
     height: 35px;
     padding: 10px;
@@ -1088,10 +1105,10 @@ body{
     top: 40px;
 }
 
-#login .facebook i{
+#login .facebook i {
     margin-right: 10px;
     color: rgb(48, 82, 255);
- 
+
 }
 
 
@@ -1103,7 +1120,7 @@ body{
 / 12 ABS / 13 CHEST / 14 ARM ***/
 
 
-#back{
+#back {
     width: 100%;
     height: auto;
     margin-top: 55px;
@@ -1111,15 +1128,15 @@ body{
 }
 
 
-#back .top{
+#back .top {
     width: auto;
     height: 180px;
     background: #1a1a1b;
-    padding: 80px; 
-    letter-spacing: 3px; 
+    padding: 80px;
+    letter-spacing: 3px;
 }
 
-#back .top h1{
+#back .top h1 {
     font-size: 30px;
     font-family: Arial Narrow;
     color: white;
@@ -1128,7 +1145,7 @@ body{
 }
 
 
-#back .top h3{
+#back .top h3 {
     font-size: 20px;
     font-family: arial narrow;
     color: #a0a0a0;
@@ -1136,7 +1153,7 @@ body{
     margin: 0 0 0 32px;
 }
 
-#back .top input{
+#back .top input {
     float: right;
     width: 300px;
     height: 40px;
@@ -1151,7 +1168,7 @@ body{
     left: -50px;
 }
 
-#back .top i{
+#back .top i {
     float: right;
     font-size: 20px;
     color: gray;
@@ -1160,7 +1177,7 @@ body{
 }
 
 /*** NEXT & PREV BUTTON***/
-.prev{
+.prev {
     background: transparent;
     width: 16%;
     height: 15%;
@@ -1168,9 +1185,10 @@ body{
     top: 35%;
     left: 0%;
     z-index: 2;
-    
+
 }
-.prev button{
+
+.prev button {
     text-align: right;
     background: gray;
     width: 100%;
@@ -1186,7 +1204,8 @@ body{
 
     transition: 0.3s;
 }
-.prev button:hover{
+
+.prev button:hover {
     position: relative;
     left: -2%;
     transform: scale(1);
@@ -1195,7 +1214,7 @@ body{
     opacity: 0.85;
 }
 
-.prev button i{ 
+.prev button i {
     transform: rotate(180deg);
     float: right;
     color: white;
@@ -1207,7 +1226,7 @@ body{
 
 /***NEXT BUTTON***/
 
-.next{
+.next {
     background: transparent;
     width: 16%;
     height: 15%;
@@ -1215,9 +1234,10 @@ body{
     top: 35%;
     left: 84%;
     z-index: 2;
-    
+
 }
-.next button{
+
+.next button {
     text-align: left;
     background: gray;
     width: 100%;
@@ -1233,7 +1253,8 @@ body{
 
     transition: 0.3s;
 }
-.next button:hover{
+
+.next button:hover {
     position: relative;
     right: -2%;
     transform: scale(1);
@@ -1242,7 +1263,7 @@ body{
     opacity: 0.85;
 }
 
-.next button i{ 
+.next button i {
     float: left;
     color: white;
     font-size: 20px;
@@ -1255,12 +1276,13 @@ body{
 
 
 
-#back .bt{
+#back .bt {
     width: 98%;
     text-align: center;
 
 }
-#back .bt button{
+
+#back .bt button {
     width: 250px;
     height: 50px;
     margin: 15px 0 15px 1%;
@@ -1276,20 +1298,21 @@ body{
     left: 1%;
     transition: 0.3s;
 }
-#back .bt button:hover{
+
+#back .bt button:hover {
     transform: scale(1.02);
     background: orangered;
 }
 
-#back .click{
+#back .click {
     width: 100%;
     text-align: center;
 }
 
-#back .click button{
+#back .click button {
     width: 300px;
     height: 50px;
-    margin: 15px 2% 15px 2% ;
+    margin: 15px 2% 15px 2%;
     background-color: #ffd43b;
     color: #252525;
     font-size: 25px;
@@ -1300,24 +1323,26 @@ body{
     border-radius: 50px;
     transition: 0.3s;
 }
-#back .click button:hover{
+
+#back .click button:hover {
     transform: scale(1.02);
     background: orangered;
 }
 
 
 
-#back button[id]{
+#back button[id] {
     background: tomato;
 }
-#back button[id]:hover{
+
+#back button[id]:hover {
     transform: scale(1);
     color: black;
 }
 
 
-#back .body{
-    width:auto;
+#back .body {
+    width: auto;
     height: 400px;
     display: block;
     background-color: white;
@@ -1326,7 +1351,7 @@ body{
     overflow: hidden;
 }
 
-#back .body h2{
+#back .body h2 {
     width: 120px;
     height: 40px;
     background-color: white;
@@ -1338,13 +1363,13 @@ body{
     z-index: 1;
 }
 
-#back .body img{
+#back .body img {
     width: 350px;
     position: relative;
     top: -50px;
 }
 
-#back .name{
+#back .name {
     width: 25%;
     height: 80px;
     position: relative;
@@ -1352,14 +1377,14 @@ body{
     left: 460px;
 }
 
-#back .name h3{
+#back .name h3 {
     font-size: 20px;
     font-family: arial black;
     text-transform: uppercase;
     color: #353839;
 }
 
-#back .name table{
+#back .name table {
     width: 50%;
     font-size: 16px;
     font-family: arial narrow;
@@ -1369,17 +1394,17 @@ body{
     margin-top: 10px;
 }
 
-#back .name th{
+#back .name th {
     color: grey;
     letter-spacing: 3px;
 }
 
-#back .name td{
+#back .name td {
     color: black;
     text-transform: lowercase;
 }
 
-#back .group{
+#back .group {
     width: 205px;
     height: 170px;
     position: relative;
@@ -1390,7 +1415,7 @@ body{
     overflow: hidden;
 }
 
-#back .group h4{
+#back .group h4 {
     width: 120%;
     font-size: 20px;
     font-family: arial narrow;
@@ -1403,7 +1428,7 @@ body{
     text-align: center;
 }
 
-#back .group ul{
+#back .group ul {
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-transform: capitalize;
@@ -1412,7 +1437,7 @@ body{
 
 }
 
-#back .group li{
+#back .group li {
     font-size: 18px;
     color: black;
     letter-spacing: 1px;
@@ -1420,7 +1445,7 @@ body{
     margin-left: 20px;
 }
 
-#back .body .btn{
+#back .body .btn {
     width: 250px;
     height: 50px;
     background-color: transparent;
@@ -1430,13 +1455,13 @@ body{
     padding: 0px;
 }
 
-#back .body .btn i{
+#back .body .btn i {
     font-size: 20px;
     margin-right: 10px;
 }
 
 
-#back .body .btn button{
+#back .body .btn button {
     width: 100px;
     height: 40px;
     margin: 0px;
@@ -1452,27 +1477,29 @@ body{
 
 }
 
-#back .body .btn button[id]{
-    background:  #5682fc;
+#back .body .btn button[id] {
+    background: #5682fc;
 }
-#back .body .btn button[id]:hover{
+
+#back .body .btn button[id]:hover {
     transform: scale(1);
     background: #3f6ce8;
     color: black;
 }
 
 
-#back .body .btn button[class]{
+#back .body .btn button[class] {
     background: tomato;
 }
-#back .body .btn button[class]:hover{
+
+#back .body .btn button[class]:hover {
     transform: scale(1);
     background: rgb(254, 70, 37);
     color: black;
 }
 
 
-#back .body .p{
+#back .body .p {
     width: 450px;
     height: 350px;
     float: right;
@@ -1480,7 +1507,7 @@ body{
     top: -680px;
     font-size: 16px;
     font-weight: 600;
-    font-family: system-ui, 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #2f2f2f;
     text-transform: capitalize;
     padding: 5px;
@@ -1488,26 +1515,26 @@ body{
     line-height: 25px;
 }
 
-#back .body h1[id]{
+#back .body h1[id] {
     width: 90px;
     position: relative;
 }
 
 
 
-#back .bttn{
+#back .bttn {
     width: auto;
     text-align: center;
     background-color: white;
 
 }
 
-#back .bttn button{
+#back .bttn button {
     width: 300px;
     height: 50px;
     border-radius: 50px;
-    background-color:#ffd43b;
-    color:  rgb(34, 32, 32);
+    background-color: #ffd43b;
+    color: rgb(34, 32, 32);
     border: none;
     margin: 50px;
     position: relative;
@@ -1519,7 +1546,7 @@ body{
     transition: 0.3s;
 }
 
-#back .bttn button:hover{
+#back .bttn button:hover {
     transform: scale(1.03);
     background-color: orangered;
     color: white;

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anshu Sood</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10">
+
+	<!--1-Navbar-area-->
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+		<div class="container-lg">
+			<a class="navbar-brand h1 fs-2 text-white" href="javascript:void(0)">
+				<span class="text-danger">A</span>nshu Sood.</a>
+			<button class="navbar-toggler border-0" type="button" title="Menu" data-bs-toggle="collapse"
+				data-bs-target="#mynavbar">
+				<span class="fa-solid fa-bars"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+				<ul class="nav navbar-nav fs-6">
+					<li class="nav-item">
+						<a class="nav-link" href="#section1">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#section2">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#section3">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#section4">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#section5">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Background -->
+	<div class="bgimage">
+		<div class="img"></div>
+		<img src="img/bg.png" alt="profile">
+	</div>
+	<!--2-Banner-area-->
+	<div id="section1" class="banner">
+		<div class="btext">
+			<p class="fs-5">Photographer/Cinematographer and Social media manager</p>
+			<h1>Hi, I'm <span class="text-danger">Anshu Sood.</span></h1>
+			<a href="#section5">
+				<button type="button" class="btn btn-outline-light">Contact us</button>
+			</a>
+		</div>
+	</div>
+
+	<!--3-About-me-->
+	<div id="section2" class="container-lg section about">
+		<div class="row d-flex">
+			<div class="image p-0 mt-2 col-md-6">
+				<img src="img/bg.png" alt="profile">
+			</div>
+			<div class="text col-md">
+				<h1>About me</h1>
+				<p>
+					Passionate Visual Storyteller
+					I’m Anshu Sood, a Photographer, Videographer, and Social Media
+					Manager with over 3 years of hands-on experience in the creative industry.
+					My expertise spans various forms of digital content creation, from capturing
+					live events and corporate functions to crafting compelling visuals for social media and online
+					branding.
+					With a dedication to delivering high-quality results that exceed client expectations, I work closely
+					with
+					my clients to bring their ideas to life.
+				</p>
+				<div class="tab-titles">
+					<p class="tab-link active-link" onclick="openTab('skills')">Skills</p>
+					<p class="tab-link" onclick="openTab('experience')">Experience</p>
+					<p class="tab-link" onclick="openTab('education')">Education</p>
+				</div>
+				<div class="tab-contents active-tab" id="skills">
+					<ul>
+						<li>
+							<span class="text-danger">Photography</span>
+						</li>
+						<li>
+							<span class="text-danger">Cinematography</span>
+						</li>
+						<li>
+							<span class="text-danger">Social media Management and Marketing</span>
+						</li>
+						<li>
+							<span class="text-danger">Video Editing</span>
+						</li>
+					</ul>
+				</div>
+				<div class="tab-contents" id="experience">
+					<ul>
+						<li>
+							<span class="text-danger">Photographer, Videographer, and Editor</span><br>
+							Sarthi Studios(Created and edited digital content for various projects.)
+						</li>
+						<li>
+							<span class="text-danger">Member</span><br>
+							Zephyr - The Film and Photography Society
+							Contributed as a photographer, videographer, and graphic designer.
+						</li>
+						<li>
+							<span class="text-danger">Digital Marketing Manager</span><br>
+							Completed a digital marketing course, specializing in online strategies.
+						</li>
+					</ul>
+				</div>
+				<div class="tab-contents" id="education">
+					<ul>
+						<li>
+							<span class="text-danger">2025</span><br>
+							Bachelor of arts History honours, Delhi University
+						</li>
+						<li>
+							<span class="text-danger">2023</span><br>
+							Digital Marketing, Aleph Group, Inc
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--4-Services-->
+	<div id="section3" class="container-lg section">
+		<h1 class="mb-4">My Services</h1>
+		<div class="cards">
+			<div class="col4">
+				<i class="fa-solid fa-camera-retro"></i>
+				<h4 class="card-title mt-4 mb-2 fs-2">Photography</h4>
+				<p class="card-text">I specialize in live concerts, corporate events, and lifestyle
+					photography.
+					My goal is to capture powerful, authentic moments that tell a story and resonate with your audience.
+				</p>
+			</div>
+			<div class="col4">
+				<i class="fa-solid fa-film"></i>
+				<h4 class="card-title mt-4 mb-2 fs-2">Videography</h4>
+				<p class="card-text">From events to promotional videos, I offer professional
+					videography services that bring your vision to the screen with dynamic and engaging content.
+				</p>
+			</div>
+			<div class="col4">
+				<i class="fa-solid fa-photo-film"></i>
+				<h4 class="card-title mt-4 mb-2 fs-2">Photo & Video Editing</h4>
+				<p class="card-text">
+					I provide expert editing services to ensure that your photos and videos are polished to perfection.
+					Whether it’s color grading, sound design, or advanced post-production, I’ve got you covered.
+				</p>
+			</div>
+			<div class="col4">
+				<i class="fa-solid fa-icons"></i>
+				<h4 class="card-title mt-4 mb-2 fs-2">Social Media Management</h4>
+				<p class="card-text">
+					I help brands grow their online presence through strategic content creation and social media
+					management.
+					With a strong focus on storytelling, I curate and manage campaigns that boost engagement and drive
+					results.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!--5-my-work-->
+	<div id="section4" class="container-lg section">
+		<h1 class="mb-4">My Work</h1>
+		<div class="cards">
+			<div class="col3">
+				<img src="img/photography.JPG" alt="Photography" class="w-100 rounded-top-2">
+				<div class="overlay">
+					<div class="text">
+						<h4 class="fs-4 text-white">Photography</h4>
+						<p class="fs-6 mb-0">Take a look at some of my recent projects to see 
+							how I can help bring your brand to life.</p>
+						<a href="photography.html" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="img/videography.JPG" alt="videography" class="w-100 rounded-top-2">
+				<div class="overlay">
+					<div class="text">
+						<h4 class="fs-4 text-white">Videography</h4>
+						<p class="fs-6 mb-0">From event videography to social media videos, each 
+							piece is crafted with care and attention to detail.</p>
+						<a href="videography.html" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="img/digitalMarketing.jpg" alt="editing" class="w-100 rounded-top-2">
+				<div class="overlay">
+					<div class="text">
+						<h4 class="fs-4 text-white">Digital Marketing</h4>
+						<p class="fs-6 mb-0">Increased Brand Awareness: Social media allows you to showcase your brand to 
+							a vast audience, increasing visibility and recognition.</p>
+						<a href="digitalMarketing.html" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--6-contact-->
+	<div id="section5" class="container-lg section">
+		<h1 class="mb-4">Contact</h1>
+		<div class="row">
+			<div class="col-lg-12">
+				<iframe class="w-100 rounded-2"
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215881.36623370645!2d77.11365139703759!3d28.524203314136315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e1!3m2!1sen!2sin!4v1696617220143!5m2!1sen!2sin"
+					height="450" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div class="col-sm-6 p-4">
+				<i class="fa fa-location-dot fs-4 mb-4 text-danger"></i><span class="ms-2 text-light">India (New
+					Delhi)</span>
+				<br>
+				<i class="fa-brands fa-whatsapp fs-3 mb-4 text-danger"></i><span
+					class="ms-2 text-light">+91-8126243388</span>
+				<br>
+				<i class="fa fa-envelope fs-4 mb-4 text-danger"></i><span
+					class="ms-2 text-light">sood33444@gmail.com</span>
+				<div class="links">
+					<a href="https://www.instagram.com/eyecraft1/" target="_blank">
+						<i class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.pinterest.com/anshu_sood_1/" target="_blank">
+						<i class="fa-brands fa-pinterest"></i></a>
+					<a href="https://www.linkedin.com/in/anshu-sood-22419b263/" target="_blank">
+						<i class="fa-brands fa-linkedin-in"></i></a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<form name="submit-to-google-sheet">
+					<input type="text" class="form-control" placeholder="Enter Name">
+					<input type="email" class="form-control" placeholder="Enter email">
+					<textarea class="form-control" rows="5" placeholder="Massege"></textarea>
+					<button type="submit" class="btn btn-danger mt-3">Submit →</button>
+				</form>
+				<div id="msg"></div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--7-Footer-->
+	<footer class="">
+		<div class="links">
+			<a href="mailto:sood33444@gmail.com" target="_blank">
+				<i class="fa fa-envelope"></i></a>
+			<a href="https://wa.me/+918126243388" target="_blank">
+				<i class="fa fa-whatsapp"></i></a>
+			<a href="https://www.instagram.com/eyecraft1/" target="_blank">
+				<i class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.pinterest.com/anshu_sood_1/" target="_blank">
+				<i class="fa-brands fa-pinterest"></i></a>
+			<a href="https://www.linkedin.com/in/anshu-sood-22419b263/" target="_blank">
+				<i class="fa-brands fa-linkedin-in"></i></a>
+		</div>
+		<div class="navLinks">
+			<a href="#section1">Home</a>
+			<a href="#section2">About</a>
+			<a href="#section3">Services</a>
+			<a href="#section4">Portfolio</a>
+			<a href="#section5">Contact</a>
+		</div>
+		<p>
+			<i class="fa fa-copyright"></i>
+			anshu sood | all right reserved.
+		</p>
+
+	</footer>
+
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>

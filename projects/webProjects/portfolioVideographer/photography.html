@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Photography</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		.tab-contents{
+			position: relative;
+		}
+		.tab-contents .cards{
+			position: relative;
+		}
+	</style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10">
+
+	<!--1-Navbar-area-->
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+		<div class="container-lg">
+			<a class="navbar-brand h1 fs-2 text-white" href="javascript:void(0)">
+				<span class="text-danger">A</span>nshu Sood.</a>
+			<button class="navbar-toggler border-0" type="button" title="Menu" data-bs-toggle="collapse"
+				data-bs-target="#mynavbar">
+				<span class="fa-solid fa-bars"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+				<ul class="nav navbar-nav fs-6">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#section1">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#section2">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#section3">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#section4">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#section5">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!--2-Banner-area-->
+	<div class="banner">
+		<div class="btext p-5">
+			<h1 class="text-danger">Photography</h1>
+			<p class="fs-5">I specialize in live concerts, Corporate events, and lifestyle photography. My goal is to
+				capture powerful, authentic
+				moments that tell a story and resonate with your audience.</p>
+		</div>
+	</div>
+
+	<!--3-photography-->
+	<div class="container-lg section">
+		<h1 class="mb-4">My Photography Work</h1>
+		<div class="text col-md">
+			<div class="tab-titles project-section">
+				<p class="tab-link photo-all active-link" onclick="openTab('photo-all')">All</p>
+				<p class="tab-link 1-Live-concert" onclick="openTab('1-Live-concert')">Live concerts</p>
+				<p class="tab-link 2-Corporate" onclick="openTab('2-Corporate')">Corporate</p>
+				<p class="tab-link 3-Photo-Event" onclick="openTab('3-Photo-Event')">Events</p>
+				<p class="tab-link 4-Product" onclick="openTab('4-Product')">Products</p>
+				<p class="tab-link 5-Artisina-Market" onclick="openTab('5-Artisina-Market')">Artisinal Market</p>
+			</div>
+			<div class="tab-contents active-tab" id="photo-all">
+				<div class="cards">
+					<div class="col3">
+						<p class="heading">Live Concerts</p>
+						<img src="https://placehold.co/400x250/F8F8F8/333333?text=Live-concert" class="w-100 rounded-top-2">
+						<div class="overlay">
+							<div class="text">
+								<h2 class="h2">Live Concerts</h2>
+								<a href="#1-Live-concert" onclick="activeTab('1-Live-concert')">
+									<i class="fa-solid fa-arrow-right m-0"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col3">
+						<p class="heading">Corporate</p>
+						<img src="https://placehold.co/400x250/F8F8F8/333333?text=Corporate" class="w-100 rounded-top-2">
+						<div class="overlay">
+							<div class="text">
+								<h2 class="h2">Corporate</h2>
+								<a href="#2-Corporate" onclick="activeTab('2-Corporate')">
+									<i class="fa-solid fa-arrow-right m-0"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col3">
+                    <p class="heading">Events</p>
+					<img src="https://placehold.co/400x250/F8F8F8/333333?text=Events" class="w-100 rounded-top-2">
+						<div class="overlay">
+							<div class="text">
+								<h2 class="h2">Events</h2>
+								<a href="#3-Photo-Event" onclick="activeTab('3-Photo-Event')">
+									<i class="fa-solid fa-arrow-right m-0"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col3">
+                    <p class="heading">Products</p>
+					<img src="https://placehold.co/400x250/F8F8F8/333333?text=Products" class="w-100 rounded-top-2">
+						<div class="overlay">
+							<div class="text">
+								<h2 class="h2">Products</h2>
+								<a href="#4-Product" onclick="activeTab('4-Product')">
+									<i class="fa-solid fa-arrow-right m-0"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col3">
+                    <p class="heading">Artisinal Market</p>
+					<img src="https://placehold.co/400x250/F8F8F8/333333?text=Artisina-Market" class="w-100 rounded-top-2">
+						<div class="overlay">
+							<div class="text">
+								<h2 class="h2">Artisinal Market</h2>
+								<a href="#5-Artisina-Market" onclick="activeTab('5-Artisina-Market')">
+									<i class="fa-solid fa-arrow-right m-0"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-contents" id="1-Live-concert">
+				<div class="cards"></div>
+				<hr>
+				<div class="cards"></div>
+			</div>
+			<div class="tab-contents" id="2-Corporate">
+				<div class="cards"></div>
+				<hr>
+				<div class="cards"></div>
+			</div>
+			<div class="tab-contents" id="3-Photo-Event">
+				<div class="cards"></div>
+				<hr>
+				<div class="cards"></div>
+			</div>
+			<div class="tab-contents" id="4-Product">
+				<div class="cards"></div>
+				<hr>
+				<div class="cards"></div>
+			</div>
+			<div class="tab-contents" id="5-Artisina-Market">
+				<div class="cards"></div>
+				<hr>
+				<div class="cards"></div>
+			</div>
+		</div>
+	</div>
+
+	<!--7-Footer-->
+	<footer class="">
+		<div class="links">
+			<a href="mailto:sood33444@gmail.com" target="_blank">
+				<i class="fa fa-envelope"></i></a>
+			<a href="https://wa.me/+918126243388" target="_blank">
+				<i class="fa fa-whatsapp"></i></a>
+			<a href="https://www.instagram.com/eyecraft1/" target="_blank">
+				<i class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.pinterest.com/anshu_sood_1/" target="_blank">
+				<i class="fa-brands fa-pinterest"></i></a>
+			<a href="https://www.linkedin.com/in/anshu-sood-22419b263/" target="_blank">
+				<i class="fa-brands fa-linkedin-in"></i></a>
+		</div>
+		<div class="navLinks">
+			<a href="#section1">Home</a>
+			<a href="#section2">About</a>
+			<a href="#section3">Services</a>
+			<a href="#section4">Portfolio</a>
+			<a href="#section5">Contact</a>
+		</div>
+		<p>
+			<i class="fa fa-copyright"></i>
+			anshu sood | all right reserved.
+		</p>
+
+	</footer>
+
+	<script type="text/javascript" src="js/photoProjects.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>

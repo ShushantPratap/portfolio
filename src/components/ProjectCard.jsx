@@ -13,12 +13,14 @@ function ProjectCard({
         <div
             className={`bg-[#e8e7e7] dark:bg-[#1c1c1c] rounded-md shadow-md overflow-hidden duration-300 hover:scale-102 hover:shadow-xl ${className}`}
         >
-            <img
-                src={image}
-                alt={title}
-                className="w-full h-52 object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x250/F8F8F8/333333?text=Image+Missing"; }}
-            />
+            <div className="bg-black dark:bg-white h-52 sm:h-40 md:h-48 lg:h-52">
+                <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-contain"
+                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x250/F8F8F8/333333?text=Image+Missing"; }}
+                />
+            </div>
             <div className="p-6">
                 <h3 className="text-2xl font-semibold mb-3 text-theme">{title}</h3>
                 <p className="text-gray-950 dark:text-gray-300 mb-4 text-base">{description}</p>

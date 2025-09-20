@@ -29,7 +29,7 @@ function Header(){
     ];
     
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-opacity-95 bg-[#0000005d] backdrop-blur-sm z-50 shadow-lg flex justify-center items-center p-2.5 md:h-[70px] md:top-0 md:bottom-auto md:p-4">
+        <nav className="fixed bottom-0 left-0 right-0 bg-opacity-95 bg-[#0000005d] backdrop-blur-sm z-50 shadow-lg flex justify-center items-center py-3 px-2 md:h-[70px] md:top-0 md:bottom-auto md:p-4">
             <div className="text-3xl mt-1 md:absolute left-3 lg:left-10">
                 <h1 className="text-2xl text-theme font-bold md:text-4xl md:mb-1">
                     Mr.<span className="text-gray-100 text-lg font-light ml-1 md:text-2xl">Pratap.</span>

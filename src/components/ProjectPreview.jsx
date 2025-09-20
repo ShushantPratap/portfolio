@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import projects from "../../projects/projects";
-import { Github, CodeXml, Sparkles } from "lucide-react";
+import { Github, Sparkles } from "lucide-react";
+import { ProjectInsightModal } from "./index";
 
 function ProjectPreview({ projectId }) {
     const [project, setProject] = useState(null);
+    const [InsightModal, getProjectInsights] = ProjectInsightModal();
 
     useEffect(() => {
         const project = projects.filter(item => item.id === projectId);
@@ -12,6 +14,7 @@ function ProjectPreview({ projectId }) {
 
     return (
         <>
+            <InsightModal />
             <div className="h-screen relative z-50 border-y-4 bg-gray-50 border-[#9b59b6] dark:border-gray-50">
                 <iframe
                     src={project?.liveLink}
@@ -70,23 +73,15 @@ function ProjectPreview({ projectId }) {
                     </div>
                     <div className="mt-5 sm:px-5 sm:mt-5">
                         <a
-                            href=""
+                            href={project?.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center bg-[#9b59b6] hover:bg-[#421156] text-white p-3 mb-2 rounded-full text-sm font-medium transition duration-300 ease-in-out"
                         >
                             <Github size={18} className="mr-2" />GitHub
                         </a>
-                        <a
-                            href={`/preview/${"id"}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center border-2 border-theme text-gray-950 dark:text-[#9b59b6] hover:bg-[#9b59b6] hover:text-white p-3 mt-2 rounded-full text-sm font-medium transition duration-300 ease-in-out"
-                        >
-                            <CodeXml size={18} className="mr-2" />Live Demo
-                        </a>
                         <button
-                            onClick=""
+                            onClick={() => getProjectInsights(project?.title, project?.description, project?.technologies)}
                             className="flex items-center bg-[#421156] hover:bg-[#9b59b6] text-white p-3 mt-2 rounded-full text-sm font-medium transition duration-300 ease-in-out"
                         >
                             <Sparkles size={18} className="mr-2" />Get Project Insights

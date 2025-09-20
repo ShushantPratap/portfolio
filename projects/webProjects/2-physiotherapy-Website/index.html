@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  	<script src="https://kit.fontawesome.com/7ea6e55696.js" crossorigin="anonymous"></script>
+  <!-- Google-Font -->
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">	
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.banner{
+	background: linear-gradient(rgb(0,0,0,0.5),rgb(0, 0, 0,0.5)),url(img/bann.jpg);
+	background-size: cover; 
+	background-attachment: fixed;
+}
+@media only screen and (max-width: 1080px) {
+  .banner{
+    background-position-x: -200px;
+  }
+}
+@media only screen and (max-width: 740px) {
+  .banner{
+    background-position-x: -400px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .banner{
+    background-position-x: -600px;
+  }
+}	
+</style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10">
+
+<!--1-Navbar-area-->
+<div class="container">
+	<nav class="navbar navbar-expand-md navbar-dark ps-3 pe-2 mt-2 fixed-top shadow">
+    		<a class="navbar-brand h1 fs-3 mt-1" href="javascript:void(0)">
+    			<i class="fa-solid fa-notes-medical"></i> Physiotherapy</a>
+    		<button class="navbar-toggler border-0" type="button" title="Menu" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      			<span class="fa-solid fa-bars"></span>
+    		</button>
+    		<div class="collapse navbar-collapse" id="mynavbar">
+      			<ul class="nav navbar-nav ms-auto me-auto">
+        			<li class="nav-item">
+        				<a class="nav-link" href="#section1">
+        					<i class="fa fa-house"></i> Home</a>
+        			</li>
+        			<li class="nav-item">
+        				<a class="nav-link" href="#section2">
+        					<i class="fa fa-phone"></i> Contact</a>
+        			</li>
+        			<li class="nav-item">
+        				<a class="nav-link" href="#section3">
+        					<i class="fa fa-calendar-check"></i> Appointment</a>
+        			</li>
+        			<li class="nav-item">
+        				<a class="nav-link" href="#section4">
+        					<i class="fa fa-circle-info"></i> About Us</a>
+        			</li>
+      			</ul>
+      			<ul class="nav">
+      				<li class="nav-item">
+        				<a class="nav-link text-light fs-4" title="Facebook" href="#">
+        					<i class="fa-brands fa-square-facebook"></i></a>
+        			</li>
+        			<li class="nav-item">
+        				<a class="nav-link text-light fs-4" title="Instagram" href="#">
+        					<i class="fa-brands fa-instagram"></i></a>
+        			</li>
+        			<li class="nav-item">
+        				<a class="nav-link text-light fs-4" title="Whatsapp" href="#">
+        					<i class="fa-brands fa-whatsapp"></i></a>
+        			</li>
+      			</ul>
+    		</div>
+	</nav>
+</div>
+
+<!--2-Banner-area-->
+	<div id="section1" class="banner">
+		<div class="btext">
+	  	<h5>Welcome to Physiotherapy</h5>
+	  	<h1>The Results you Want. The Care you Deserve.</h1>
+	  	<p>You’re in safe hands.</p>
+	  	<a href="#section3">
+	  		<button type="button" class="btn btn-outline-light">Book Appointment</button>
+	  	</a>
+	  </div>
+	</div>
+
+<!--3-Contact-area-->
+	<div id="section2" class="container-lg">
+	  <div class="text-center">
+      <h1><i class="fa-regular fa-address-card"></i>
+			Contact Us</h1>
+			<p>Contact us in multiple ways.</p>
+			<div class="row">
+				<div class="card m-2 col-md">
+    			<div class="card-body">
+    			  <h4 class="card-title"><i class="fa-solid fa-map-location-dot"></i> Address</h4>
+    			  <hr>
+    			  <p class="card-text">1/50 near by metro station new delhi,india</p>
+    			</div>
+  			</div>
+  			<div class="card m-2 col-md">
+    			<div class="card-body">
+    			  <h4 class="card-title"><i class="fa-solid fa-phone-volume"></i> Phone</h4>
+    			  <hr>
+    			  <p class="card-text">+91-1234567890</p>
+    			  <p class="card-text">+91-1234567890</p>
+    			</div>
+  			</div>
+  			<div class="card m-2 col-md">
+    			<div class="card-body">
+    			  <h4 class="card-title"><i class="fa-solid fa-envelope"></i> Email</h4>
+    			  <hr>
+    			  <p class="card-text">hello@gmail.com</p>
+    			</div>
+  			</div>
+  			<div class="card m-2 col-md">
+    			<div class="card-body">
+    			  <h4 class="card-title"><i class="fa-solid fa-globe"></i> Social</h4>
+    			  <hr>
+    			  <p class="card-text">Follow Us on Social media</p>
+    			  <p class="card-text">
+  						<button title="Facebook" class="btn btn-outline-dark m-1">
+  							<i class="fa fa-facebook"></i></button>
+  						<button title="Instagram"  class="btn btn-outline-dark m-1">
+  							<i class="fa fa-instagram"></i></button>
+  						<button title="Whatsapp"  class="btn btn-outline-dark m-1">
+  							<i class="fa fa-whatsapp"></i></button>
+    			  </p>
+    			</div>
+  			</div>
+  			
+			</div>
+		</div>
+	</div>
+
+<!--4-Doctor-->
+	<div class="Physiotherapy container row d-flex">
+		<div class="image col-sm">
+			<img src="img/doc.webp" class="">
+		</div>
+		<div class="text col-sm p-5">
+			<h2>Physiotherapy</h2>
+			<p class="">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+	</div>
+
+<!--5-Image-area-->
+	<div class="container text-center">
+		<h1><i class="fa-regular fa-images"></i> Clinic Images</h1>
+		<p>The clinic has good facilities.</p>
+		<div class="img row">
+			<img src="img/1.jpg" class="col-sm-4">
+			<img src="img/2.jpg" class="col-sm-4">
+			<img src="img/3.jpg" class="col-sm-4">
+			<img src="img/4.jpg" class="col-sm-4">
+			<img src="img/5.jpg" class="col-sm-4">
+			<img src="img/6.jpg" class="col-sm-4">
+		</div>
+	</div>
+
+<!--6-Services-area-->
+	<div class="container mt-5 pt-5 text-center">
+		<h1><i class="fa-solid fa-house-medical"></i> Services</h1>
+		<p>The clinic has good facilities.</p>
+		<div class="row">
+			<div class="card col-sm m-2 p-0">
+    			<img src="img/5.jpg" class="card-img-top">
+    			<h4 class="card-title mt-4">Social</h4>
+    			<p class="card-text pb-4 px-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+			</div>
+			<div class="card col-sm m-2 p-0">
+    			<img src="img/5.jpg" class="card-img-top">
+    			<h4 class="card-title mt-4">Social</h4>
+    			<p class="card-text pb-4 px-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+			</div>
+			<div class="card col-sm m-2 p-0">
+    			<img src="img/5.jpg" class="card-img-top">
+    			<h4 class="card-title mt-4">Social</h4>
+    			<p class="card-text pb-4 px-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+			</div>
+		</div>
+	</div>
+		
+<!--7-Appointment-area-->
+	<div id="section3" class="container">
+		<div class="text-center">
+      <h1><i class="fa fa-calendar-check"></i>
+			Book your Appointment</h1>
+			<p>Bring the booking message with you while coming to the clinic.</p>
+		</div>
+		<form id="addForm">
+  		<div class="mb-3">
+  		  <label for="name" class="form-label">Name:</label>
+  		  <input type="text" class="form-control" id="Ename" placeholder="Enter your number">
+  		</div>
+  		<div class="mb-3">
+  		  <label for="number" class="form-label">Phone No:</label>
+  		  <input type="number" class="form-control" id="Enumber" placeholder="Enter your number">
+  		</div>
+  		<div class="mb-3 mt-3">
+  		  <label for="email" class="form-label">Email:</label>
+  		  <input type="email" class="form-control" id="Email" placeholder="Enter your email">
+  		</div>
+  		<div class="mb-3 mt-3">
+  		  <label for="calendar" class="form-label">Schedule:</label>
+  		  <input type="date" class="form-control" id="date">
+  		</div>
+  		<div class="mb-3 mt-3">
+  		  <label for="comment">Problem:</label>
+				<textarea class="form-control" rows="5" id="Ecomment" placeholder="Write your problem."></textarea>
+			</div>
+			<div id="error-message"></div>
+			<div id="success-message"></div>
+  		<button id="save-button" class="btn btn-outline-dark">Submit</button>
+		</form>
+	</div>
+
+<!--8-Price-area-->
+	<div class="container text-center">
+		<h1><i class="fa-regular fa-money-bill-1"></i> Pricing</h1>
+		<p>The clinic has good facilities.</p>
+		<div class="row">
+			<div class="card col-sm m-2 p-0">
+    			<h4 class="card-title mt-4 mb-0">Basic</h4>
+    			<h5 class="card-title text-warning border-bottom mt-2 pb-3">₹499</h5>
+    			<p class="card-text pb-4 px-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+			</div>
+			<div class="card col-sm m-2 p-0">
+    			<h4 class="card-title mt-4 mb-0">Standard</h4>
+    			<h5 class="card-title text-success border-bottom mt-2 pb-3">₹899</h5>
+    			<p class="card-text pb-4 px-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+			</div>
+			<div class="card col-sm m-2 p-0">
+    			<h4 class="card-title mt-4 mb-0">Premium</h4>
+    			<h5 class="card-title text-danger border-bottom mt-2 pb-3">₹1199</h5>
+    			<p class="card-text pb-4 px-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+			</div>
+		</div>
+	</div>
+
+<!--9-About-area-->
+	<div id="section4" class="container text-center">
+	  <h1><i class="fa fa-circle-info"></i> About Us</h1>
+	</div>
+
+<!--10-Footer-area-->
+	<div class="footer text-center text-white">
+		<div class="container">
+			<div class="pt-5">
+					<h5>Sitemap</h5>
+        	<a class="text-light m-2" href="#section1">
+        		<i class="fa fa-house"></i> Home</a>
+        	<a class="text-light m-2" href="#section2">
+        		<i class="fa fa-phone"></i> Contact</a>
+        	<a class="text-light m-2" href="#section3">
+        		<i class="fa fa-calendar-check"></i> Appointment</a>
+        	<a class="text-light m-2" href="#section4">
+        		<i class="fa fa-circle-info"></i> About Us</a>
+				</div>
+			<div class="row text-dark container p-sm-5">
+				<div class="col-sm bg-light  border-1 m-2 p-4 rounded-2">
+					<i class="fa fa-map-location-dot mb-2 fs-5"></i>
+					<p class="fs-5">Address</p>
+					<hr class="hr mt-1">
+					<h6>A-72 ,Gali no. 5 Rashid market ,Delhi-51</h6>
+				</div>
+				<div class="col-sm bg-light border-1 m-2 p-4 rounded-2">
+					<i class="fa-regular fa-envelope mb-2 fs-5"></i>
+					<p class="fs-5">Email</p>
+					<hr class="hr mt-1">
+					<h6>hello@gmail.com</h6>
+				</div>
+				<div class="col-sm bg-light border-1 m-2 p-4 rounded-2">
+					<i class="fa fa-mobile mb-2 fs-5"></i>
+					<p class="fs-5">Phone</p>
+					<hr class="hr mt-1">
+					<h6>+91-1234567890</h6>
+					<h6>+91-1234567890</h6>
+				</div>
+			</div>
+			<div class="fs-2 text-center">
+				<p>
+					<a href="" class="text-light m-1">
+						<i class="fa-brands fa-square-facebook"></i>
+					</a>
+					<a href="" class="text-light m-1">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+					<a href="" class="text-light m-1">
+						<i class="fa-brands fa-whatsapp"></i>
+					</a>
+				</p>
+			</div>
+		</div>	
+		<div class="copyright text-secondary pb-5">
+			Copyright <i class="fa fa-copyright"></i> Physiotherapy 2024. All Rights Reserved.</div>
+	</div>
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

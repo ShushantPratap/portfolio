@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
+import config from "../../config/config";
 
 function ProjectIdeaGen() {
     // State for Project Idea Generation
@@ -24,8 +25,8 @@ function ProjectIdeaGen() {
         let chatHistory = [];
         chatHistory.push({ role: "user", parts: [{ text: prompt }] });
         const payload = { contents: chatHistory };
-        const apiKey = "AIzaSyBXChy1q5uPDeuo3m95NAwALY4SDVXUItI"; // Canvas will automatically provide this at runtime
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        const apiKey = config.geminiApiKey; // Canvas will automatically provide this at runtime
+        const apiUrl = config.geminiApiUrl + apiKey;
 
         try {
             const response = await fetch(apiUrl, {
@@ -55,14 +56,14 @@ function ProjectIdeaGen() {
     return (
         <div className="space-y-6">
             <div>
-                <label htmlFor="projectIdeaKeywords" className="block text-lg font-medium text-gray-700 mb-2">
+                <label htmlFor="projectIdeaKeywords" className="block text-lg font-medium dark:text-gray-100 text-gray-700 mb-2">
                     Enter Keywords or Area of Interest:
                 </label>
                 <input
                     type="text"
                     id="projectIdeaKeywords"
                     name="projectIdeaKeywords"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 text-gray-900 dark:text-gray-100 dark:placeholder:text-[#9c9c9c]"
                     placeholder="e.g., 'AI, fitness, social media, education, gaming'"
                     value={projectIdeaKeywords}
                     onChange={(e) => setProjectIdeaKeywords(e.target.value)}
@@ -70,7 +71,7 @@ function ProjectIdeaGen() {
             </div>
             <button
                 onClick={generateProjectIdeas}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
+                className="w-full bg-[#421156] hover:bg-[#9b59b6] text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 ease-in-out transform hover:scale-102 flex items-center justify-center"
                 disabled={isLoadingProjectIdeas}
             >
                 {isLoadingProjectIdeas ? (
@@ -86,7 +87,7 @@ function ProjectIdeaGen() {
             </button>
             {generatedProjectIdeas && (
                 <div className="mt-8">
-                    <h3 className="text-2xl font-semibold mb-4 text-gray-900">Generated Ideas:</h3>
+                    <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Generated Ideas:</h3>
                     <textarea
                         readOnly
                         rows="10"

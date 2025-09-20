@@ -6,6 +6,8 @@ import ProjectInsightModal from "./AI.integration/ProjectInsightModal";
 import CovertLatterGen from "./AI.integration/CoverLatterGen";
 import ProjectIdeaGen from "./AI.integration/ProjectIdeaGen";
 import ProjectPreview from "./ProjectPreview";
+import Carousel from "./Carousel";
+import ProjectSlider from "./ProjectSlider";
 
 export {
     Header,
@@ -15,5 +17,7 @@ export {
     ProjectInsightModal,
     CovertLatterGen,
     ProjectIdeaGen,
-    ProjectPreview
+    ProjectPreview,
+    Carousel,
+    ProjectSlider
 }
