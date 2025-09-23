@@ -8,6 +8,7 @@ import ProjectIdeaGen from "./AI.integration/ProjectIdeaGen";
 import ProjectPreview from "./ProjectPreview";
 import Carousel from "./Carousel";
 import ProjectSlider from "./ProjectSlider";
+import Input from "./Input";
 
 export {
     Header,
@@ -19,5 +20,6 @@ export {
     ProjectIdeaGen,
     ProjectPreview,
     Carousel,
-    ProjectSlider
+    ProjectSlider,
+    Input
 }

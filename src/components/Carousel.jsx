@@ -67,7 +67,11 @@ function Carousel({
                                 <div className="sliderImage w-full border-3 border-gray-400 rotate-10 scale-92 md:100" style={{ background: `linear-gradient(#0000009d, #000000c6), url(${slide.image})` }}>
                                     <div className="border-3 border-[#421156] rotate-175 scale-105 md:100" style={{ backgroundImage: `linear-gradient(#0000009d, #000000c6),url(${slide.image})` }}>
                                         <div className="rotate-175 overflow-hidden rounded-sm border-3 border-theme scale-105 md:scale-100">
-                                            <img className="w-full h-full object-cover" src={slide.image} alt={slide.title} />
+                                            <img
+                                                className="w-full h-full object-cover"
+                                                src={slide.image} alt={slide.title}
+                                                onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/400x250/F8F8F8/333333?text=${slide.title}`; }}
+                                            />
                                         </div>
                                     </div>
                                 </div>

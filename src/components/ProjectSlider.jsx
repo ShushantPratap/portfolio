@@ -14,8 +14,6 @@ function ProjectSlider({
     const nextSlide = useRef(null);
     const slideRef = useRef(null);
 
-    console.log(scrollWidth)
-    
     useEffect(() => {
         const scrollWidth = slideRef.current.scrollWidth;
         setScrollWidth(scrollWidth);
