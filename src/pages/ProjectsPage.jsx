@@ -28,7 +28,7 @@ function ProjectsPage() {
             {/* Project Insight Modal */}
             <InsightModal />
             <section className="fixed top-0 w-screen bg-opacity-95 bg-[#0000005d] backdrop-blur-sm z-50 flex justify-around px-3 pr-5 md:justify-center md:flex-col md:top-[70px] md:w-[20%] md:h-[calc(100vh-70px)] lg:w-[15%]">
-                <div className="w-full m-1 border-1 rounded-3xl overflow-hidden relative border-[#421156] dark:text-gray-100 md:w-[95%] md:absolute md:left-0 md:top-5">
+                <div className="w-full m-1 border-1 rounded-3xl overflow-hidden relative border-[#421156] dark:border-gray-100 dark:text-gray-100 md:w-[95%] md:absolute md:left-0 md:top-5">
                     <Input
                         className="w-full p-1.5 placeholder:text-gray-800 dark:placeholder:text-gray-300 outline-0"
                         placeholder="Search"
