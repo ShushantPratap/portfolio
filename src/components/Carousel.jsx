@@ -45,7 +45,7 @@ function Carousel({
     }, []);
 
     return (
-        <div className="carousel w-full h-[92vh] overflow-hidden relative md:h-[80vh]">
+        <div className="carousel w-full h-fit overflow-hidden relative md:h-[80vh]">
             <div className={`list flex h-full transition-all ease-in-out duration-500 relative`} style={{ width: `${slides.length * 100}%`, left: `-${index * 100}%` }}>
                 {slides.map(slide =>
                     <div className="item w-full bg-black flex flex-col-reverse justify-end md:flex-row md:p-1.5 md:items-center" key={slide.id}>
@@ -105,7 +105,7 @@ function Carousel({
             <button ref={nextSlide} className="absolute top-[50%] transform translate-y-[-50%] right-2 p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white">
                 <ChevronRight />
             </button>
-            <div className="w-full flex justify-center items-center absolute bottom-2">
+            <div className="w-full flex justify-center items-center absolute bottom-1">
                 {slides.map((slide, i) => index === i
                     ? <button className="w-5.5 h-2 md:w-8 md:h-2.5 m-[3px] md:m-1 rounded-full transition-all duration-300 bg-[#9b59b6]" key={slide.id + i}></button>
                     : <button
