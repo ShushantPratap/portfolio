@@ -6,6 +6,10 @@ import ProjectInsightModal from "./AI.integration/ProjectInsightModal";
 import CovertLatterGen from "./AI.integration/CoverLatterGen";
 import ProjectIdeaGen from "./AI.integration/ProjectIdeaGen";
 import ProjectPreview from "./ProjectPreview";
+import Carousel from "./Carousel";
+import ProjectSlider from "./ProjectSlider";
+import Input from "./Input";
+import ChatBot from "./AI.integration/ChatBot";
 
 export {
     Header,
@@ -15,5 +19,9 @@ export {
     ProjectInsightModal,
     CovertLatterGen,
     ProjectIdeaGen,
-    ProjectPreview
+    ProjectPreview,
+    Carousel,
+    ProjectSlider,
+    Input,
+    ChatBot
 }

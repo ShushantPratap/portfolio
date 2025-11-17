@@ -27,7 +27,11 @@ const router = createBrowserRouter([
         element: <PreviewPage />
       },
       {
-        path: "/ai-assistant",
+        path: "/ai-assistant/",
+        element: <AI_assistant />
+      },
+      {
+        path: "/ai-assistant/:slug",
         element: <AI_assistant />
       }
       

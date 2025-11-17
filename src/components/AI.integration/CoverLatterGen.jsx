@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
+import config from "../../config/config";
 
 function CovertLatterGen({
     skills=[],
@@ -36,8 +37,8 @@ function CovertLatterGen({
         let chatHistory = [];
         chatHistory.push({ role: "user", parts: [{ text: prompt }] });
         const payload = { contents: chatHistory };
-        const apiKey = "AIzaSyBXChy1q5uPDeuo3m95NAwALY4SDVXUItI"; // Canvas will automatically provide this at runtime
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        const apiKey = config.geminiApiKey; // Canvas will automatically provide this at runtime
+        const apiUrl = config.geminiApiUrl + apiKey;
 
         try {
             const response = await fetch(apiUrl, {
@@ -66,14 +67,14 @@ function CovertLatterGen({
     return (
         <div className="space-y-6">
             <div>
-                <label htmlFor="jobDescription" className="block text-lg font-medium text-gray-700 mb-2">
+                <label htmlFor="jobDescription" className="block text-lg font-medium dark:text-gray-100 text-gray-700 mb-2">
                     Paste Job Description Here:
                 </label>
                 <textarea
                     id="jobDescription"
                     name="jobDescription"
                     rows="10"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 text-gray-900 dark:text-gray-100 dark:placeholder:text-[#9c9c9c]"
                     placeholder="e.g., 'We are looking for a skilled React Developer with experience in Node.js...'"
                     value={jobDescription}
                     onChange={(e) => setJobDescription(e.target.value)}
@@ -81,7 +82,7 @@ function CovertLatterGen({
             </div>
             <button
                 onClick={generateCoverLetter}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
+                className="w-full bg-[#9b59b6] hover:bg-[#421156] text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 ease-in-out transform hover:scale-102 flex items-center justify-center"
                 disabled={isLoadingCoverLetter}
             >
                 {isLoadingCoverLetter ? (
@@ -97,7 +98,7 @@ function CovertLatterGen({
             </button>
             {generatedCoverLetter && (
                 <div className="mt-8">
-                    <h3 className="text-2xl font-semibold mb-4 text-gray-900">Generated Cover Letter:</h3>
+                    <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Generated Cover Letter:</h3>
                     <textarea
                         readOnly
                         rows="15"

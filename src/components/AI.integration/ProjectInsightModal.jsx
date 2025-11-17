@@ -1,4 +1,5 @@
 import { useState } from "react";
+import config from "../../config/config";
 
 const ProjectInsightModal = () => {
     const [showInsightModal, setShowInsightModal] = useState(false);
@@ -25,8 +26,8 @@ const ProjectInsightModal = () => {
         let chatHistory = [];
         chatHistory.push({ role: "user", parts: [{ text: prompt }] });
         const payload = { contents: chatHistory };
-        const apiKey = "AIzaSyBXChy1q5uPDeuo3m95NAwALY4SDVXUItI"; // Canvas will automatically provide this at runtime
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        const apiKey = config.geminiApiKey; // Canvas will automatically provide this at runtime
+        const apiUrl = config.geminiApiUrl+apiKey;
 
         try {
             const response = await fetch(apiUrl, {
@@ -54,7 +55,7 @@ const ProjectInsightModal = () => {
     
     function InsightModal(){
         return isOpen ? (
-        <div className="fixed inset-0 bg-[#0000005d] backdrop-blur-sm z-10 p-5 py-15 overflow-y-scroll">
+        <div className="fixed inset-0 bg-[#0000005d] backdrop-blur-sm z-100 p-5 py-15 overflow-y-scroll">
             <div className="bg-white rounded-md shadow-2xl p-8 max-w-2xl w-full mx-auto h-fit relative">
                 <button
                     onClick={onClose}

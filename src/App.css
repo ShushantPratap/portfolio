@@ -1,74 +1,228 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-nav .navLinks a{
-  position: relative;
+nav .navLinks a {
+    position: relative;
 }
-nav .navLinks a::before{
-  content: "";
-  width: 0;
-  height: 4px;
-  border-radius: 10px;
-  background-color: #421156;
-  position: absolute;
-  top: 100%;
-  transition: ease-in-out .4s;
+
+nav .navLinks a::before {
+    content: "";
+    width: 0;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #421156;
+    position: absolute;
+    top: 100%;
+    transition: ease-in-out .4s;
 }
-nav .navLinks a:hover::before{
-  width: 50%;
+
+nav .navLinks a:hover::before {
+    width: 50%;
 }
 
 
-/* From Uiverse.io by alexruix */ 
+/* From Uiverse.io by alexruix */
 /* The switch - the box around the slider */
 .darkModeSwitch {
-  font-size: 14px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
 }
 
 /* Hide default HTML checkbox */
 .darkModeSwitch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* The slider */
+/* dark mode slider */
 .slider {
-  --background: #1c1c1cbd;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: .5s;
-  border-radius: 30px;
-  border: #9b59b6;
+    --background: #1c1c1cbd;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+    border: #9b59b6;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 12%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
-  background: var(--background);
-  transition: .5s;
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 12%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
 }
 
-input:checked + .slider {
-  background-color: #421156;
+input:checked+.slider {
+    background-color: #421156;
 }
 
-input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #fff000;
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+
+/* carousel */
+
+/* animation text in first item */
+.carousel .list .item:nth-child(1) .sliderImage,
+.carousel .list .item:nth-child(1) .sliderContent .title,
+.carousel .list .item:nth-child(1) .sliderContent .des,
+.carousel .list .item:nth-child(1) .sliderContent .projectTech,
+.carousel .list .item:nth-child(1) .sliderBtn {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .3s 1s linear 1 forwards;
+}
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .sliderImage{
+    animation-delay: 0.8s;
+}
+.carousel .list .item:nth-child(1) .sliderBtn {
+    animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .sliderContent .title {
+    animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(1) .sliderContent .des {
+    animation-delay: 1.6s;
+}
+.carousel .list .item:nth-child(1) .sliderContent .projectTech {
+    animation-delay: 1.8s;
+}
+
+
+
+/* chatbot */
+:root {
+  --bg: #0b0f17;
+  --panel: #131a24;
+  --muted: #7b8aa0;
+  --text: #e8eef7;
+  --me: #2563eb;
+  --bot: #2b3442;
+}
+
+* { box-sizing: border-box; }
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b0f17, #0d1320);
+  color: var(--text);
+  padding: 2rem 1rem 6rem;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.chat {
+  position: relative;
+  max-width: 780px;
+  margin: 2rem auto;
+  border: 1px solid #1f2a37;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.chat-window {
+  height: 420px;
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.bubble h1{
+  font-size: 17px;
+  font-weight: 600;
+}
+.bubble h2{
+  display: inline;
+}
+
+.bubble a{
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.bubble.user {
+  margin-left: auto;
+  background: var(--me);
+  color: white;
+  border-bottom-right-radius: 4px;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+
+.bubble.model {
+  margin-right: auto;
+  background: var(--bot);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #1f2a37;
+  background: #0e1520;
+}
+
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #223046;
+  outline: none;
+  background: #0b1220;
+  color: var(--text);
+}
+
+.chat-input button {
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid #223046;
+  background: #142032;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chat-input button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
