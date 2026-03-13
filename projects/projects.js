@@ -140,6 +140,17 @@ const projects = [
     liveLink: 'https://shushantprojects.vercel.app/webProjects/1-Website-GYM/1-Home.html',
     image: 'https://sp3.free.nf/img/gymWebsite.png'
   },
+  // API projects
+   {
+    id: 'universal-player-api',
+    type: 'api',
+    title: 'Universal player api',
+    description: `A high-performance Node.js API that programmatically resolves and extracts direct streaming sources from 1,000+ platforms like YouTube and Instagram. It bypasses frontend restrictions to provide raw video metadata and direct .mp4 links, enabling seamless integration into custom, framework-free web players.`,
+    technologies: ['HTML', 'CSS', 'JavaScript', 'NodeJs', 'Express'],
+    githubLink: "https://github.com/ShushantPratap/projects/tree/main/API's/universal-player-api",
+    liveLink: "'https://shushantprojects.vercel.app/API's/universal-player-api/index",
+    image: 'https://sp3.free.nf/img/js20.jpeg'
+  },
 
   // game projects
   {
